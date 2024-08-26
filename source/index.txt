@@ -2,12 +2,8 @@
 
 ~
 
-Welcome to my website!  You can head on over to [About](/about) to learn more about me, or you can check out my project portfolio at the [Projects](/projects) tab.
+Welcome to my website!
 
-## Active Projects
+::wip[Be Back Soon!]
 
-Here are the interesting engineering and design projects I'm currently working on!
-
-::tile[Polaris I][Low-Cost Personal Computer][/projects/independent/polaris-i][/media/computer-hardware.jpg]
-
-::tile[Polaris I][Low-Cost Personal Computer][/projects/independent/polaris-i][/media/computer-hardware.jpg]
+This website is currently under maintenance and will be live within 72 hours.
