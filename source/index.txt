@@ -9,3 +9,5 @@ Welcome to my website!  You can head on over to [About](/about) to learn more ab
 Here are the interesting engineering and design projects I'm currently working on!
 
 ::tile[Polaris I][Low-Cost Personal Computer][/projects/independent/polaris-i][/media/computer-hardware.jpg]
+
+::tile[Polaris I][Low-Cost Personal Computer][/projects/independent/polaris-i][/media/computer-hardware.jpg]
