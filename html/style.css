@@ -160,21 +160,23 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        min-height: 180px;
+        min-height: 100px;
         height: auto;
         margin: 10px;
         border-radius: 20px;
         text-decoration: none;
         color: rgb(85, 85, 85);
         background-color: rgb(247 229 80 / 47%);
-        font-size: 54px;
+        font-size: 36px;
         font-family: "Outfit", sans-serif;
         font-weight: 600;
     }
 
     div.notice::before {
-        content: "Notice";
-        font-size: 36px;
+        content: "NOTICE";
+        letter-spacing: 4px;
+        font-size: 24px;
+        color: gray;
     }
 }
 
@@ -353,7 +355,9 @@
     }
 
     div.notice::before {
-        content: "Notice";
+        content: "NOTICE";
+        letter-spacing: 4px;
         font-size: 36px;
+        color: gray;
     }
 }
