@@ -1,3 +1,11 @@
 # Joseph Hobbs
 
-Hello, world!
+~
+
+Welcome to my website!  You can head on over to [About](/about) to learn more about me, or you can check out my project portfolio at the [Projects](/projects) tab.
+
+## Active Projects
+
+Here are the interesting engineering and design projects I'm currently working on!
+
+::tile[Polaris I][Low-Cost Personal Computer][/projects/independent/polaris-i][/media/computer-hardware.jpg]
