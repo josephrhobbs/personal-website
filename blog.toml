@@ -1,3 +1,7 @@
 [site]
 name = "Joseph R. Hobbs"
 style = "tech"
+
+[menu]
+names = ["Home", "About", "Projects", "Contact"]
+links = ["/", "/about", "/projects", "/contact"]
