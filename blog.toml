@@ -6,3 +6,8 @@ icon = "media/favicon.ico"
 [menu]
 names = ["Home", "About", "Projects", "Contact"]
 links = ["/", "/about", "/projects", "/contact"]
+
+[media]
+include = [
+    "code.jpg",
+]
