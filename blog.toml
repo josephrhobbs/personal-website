@@ -1,6 +1,7 @@
 [site]
 name = "Joseph R. Hobbs"
 style = "tech"
+icon = "media/favicon.ico"
 
 [menu]
 names = ["Home", "About", "Projects", "Contact"]
