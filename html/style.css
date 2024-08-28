@@ -112,7 +112,7 @@
 
     div.tile .desc {
         display: none;
-        position: absolute;
+        position: fixed;
         height: 28px;
         width: auto;
         background-color: black;
