@@ -111,19 +111,8 @@
     }
 
     div.tile .desc {
-        display: none;
-        position: fixed;
-        height: 28px;
-        width: auto;
-        background-color: black;
-        color: white;
-        text-shadow: none;
+        font-family: "EB Garamond", serif;
         font-size: 24px;
-        font-family: "Outfit", sans-serif;
-    }
-
-    div.tile:hover .desc {
-        display: block;
     }
 
     div.menu {
