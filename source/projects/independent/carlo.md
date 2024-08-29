@@ -12,7 +12,7 @@ Several months later, I found an application for my newfound understanding of co
 
 Over the next year, I slowly came up with an idea for a project that had a potential application in my academic work.  I wanted an interpreted language that enabled symbolic manipulation of mathematical expressions.
 
-~ Furthermore, I wanted to be able to manipulate dimensioned quantities... I could never remember if I was working in kilograms or grams, feet or meters, or newtons or pounds, and so I wanted my language to simply tell me.  So during the Christmas break of my junior year of college, I finally buckled down and began developing the Carlo language.
+Furthermore, I wanted to be able to manipulate dimensioned quantities... I could never remember if I was working in kilograms or grams, feet or meters, or newtons or pounds, and so I wanted my language to simply tell me.  So during the Christmas break of my junior year of college, I finally buckled down and began developing the Carlo language.
 
 ## Vision
 
