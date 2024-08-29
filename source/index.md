@@ -2,6 +2,6 @@
 
 ~
 
-::notice[Be Back Soon!]
+Welcome to my website!
 
-This website is currently under maintenance and will be live within 72 hours.
+You can head on over to [About](/about) to learn more about me, or you can check out my project portfolio at the [Projects](/projects) tab.
