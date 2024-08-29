@@ -8,7 +8,7 @@ names = ["Home", "About", "Projects", "Contact"]
 links = ["/", "/about", "/projects", "/contact"]
 
 [analytics]
-tag = "analytics-tag.txt"
+tag = "analytics-tag.html"
 
 [media]
 include = [
