@@ -1,0 +1,47 @@
+# The Carlo Language
+
+~
+
+When I was in middle school, I learned how to code in Python.  I found the simple and self-documenting syntax fascinating and inspiring, and ever since I've always aspired to develop a programming language.
+
+Unfortunately, in my naivety, I didn't realize the great complexity and difficulty of the task I wanted to undertake.  Six years would pass before I was successful in developing my first working programming language, [Boron](/projects/independent/boron).
+
+However, despite my satisfaction, I found absolutely no application for the Boron language, because it was simply C with different syntax.  I had no use or liking for C... I was not a software developer by training, and I didn't care for its clunky methods for memory management.
+
+Several months later, I found an application for my newfound understanding of computer language development, and I developed [Elemental](/projects/independent/elemental), a simple matrix processing program.  But Elemental too suffered the same pitfall as Boron... it was not unique.  Elemental was no different than MATLAB, except that Elemental had fewer than ten built-in functions and was agonizingly slow.
+
+Over the next year, I slowly came up with an idea for a project that had a potential application in my academic work.  I wanted an interpreted language that enabled symbolic manipulation of mathematical expressions.
+
+~ Furthermore, I wanted to be able to manipulate dimensioned quantities... I could never remember if I was working in kilograms or grams, feet or meters, or newtons or pounds, and so I wanted my language to simply tell me.  So during the Christmas break of my junior year of college, I finally buckled down and began developing the Carlo language.
+
+## Vision
+
+The Carlo Language began with a simple vision: the "engineer's calculator."  This meant that Carlo had to be able to effectively handle both numeric and symbolic manipuation.  Furthermore, to stand out from its peers, Carlo had to have dimensioned quantities, which proved a unique challenge in development.
+
+In pursuit of the vision for the Carlo Language, I also implemented a LaTeX output feature, which would first evaluate a Carlo file and then typeset its results using LaTeX.
+
+## Interpreter Structure
+
+The Carlo Language is an interpreted programming language, and as such, it requires an interpreter.  I selected the Rust Programming Language for this task.  Its robust balance of speed and memory safety made it a strong candidate for the task.
+
+## Language Features
+
+The Carlo Language currently includes support for basic arithmetic operations, many commonly used SI units and prefixes, and basic symbolic operations.
+
+## Planned Improvements
+
+The Carlo Language is constantly under improvement, and future iterations will include computer algebra system support as well as matrix operations.
+
+## What's in a Name?
+
+The Carlo Language is named for Carlo Acutis, a Catholic web developer born in 1991.  He was both an extraordinarily generous and sensitive young man as well as a highly proficient computer programmer.  He passed away at the age of 15 from leukemia and was buried in Assisi, Italy.
+
+Acutis was beatified by Pope Francis in 2020 and is celebrated and venerated among Catholics as a patron of computer programmers.
+
+You may read more about Acutis on [his Wikipedia page](https://en.wikipedia.org/wiki/Carlo_Acutis).
+
+## Source Code
+
+The Carlo Language is open-source and licensed under the MIT License.  Its source code is available on GitHub.
+
+[https://github.com/josephrhobbs/carlo](https://github.com/josephrhobbs/carlo)
