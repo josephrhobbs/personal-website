@@ -13,4 +13,5 @@ tag = "analytics-tag"
 [media]
 include = [
     "code.jpg",
+    "me.jpg",
 ]
