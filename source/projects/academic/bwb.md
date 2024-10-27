@@ -10,7 +10,7 @@ This promise of increased lift production carries with it an improvement in fuel
 
 ## Design Problem
 
-The ultimate goal of our project was to design a passenger aircraft powered by liquid hydrogen that could carry a minimum of 300 passengers a distance of 14,140 kilometers.  For aircraft that satisfied this requirement, we sought the minimum value of the product of the aircraft's empty mass and its flight time to desired range (in _kg-hr_).
+The ultimate goal of our project was to design a passenger aircraft powered by liquid hydrogen that could carry a minimum of 300 passengers a distance of 14,140 kilometers.  For aircraft that satisfied this requirement, we sought the minimum value of the product of the aircraft's empty mass and its flight time to desired range (in _kg-hr_ units).
 
 ### Part I
 
