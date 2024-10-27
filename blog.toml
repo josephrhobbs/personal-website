@@ -14,4 +14,12 @@ tag = "analytics-tag.html"
 include = [
     "code.jpg",
     "me.jpg",
+    "blotch.png",
+    "blotch-example.png",
+    "bwb.jpg",
+    "bwb-example.jpg",
+    "bwb-part-ii-a.png",
+    "bwb-part-ii-b.png",
+    "bwb-part-iii.png",
+    "bwb-simulation.png",
 ]
