@@ -28,7 +28,7 @@ The source code for EZWordle and EZWordle2 is open and available on GitHub.  All
 
 [https://github.com/josephrhobbs/ezwordle2](https://github.com/josephrhobbs/ezwordle2)
 
-# Credits
+## Credits
 
 Thanks to Josh Wardle for developing the game Wordle.
 
