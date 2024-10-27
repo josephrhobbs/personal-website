@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C43FKL8BR7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C43FKL8BR7');
+</script>
+
+
+<title>Blotch | Joseph R. Hobbs</title>
+
+<link rel="stylesheet" href="/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link href="/prism.css" rel="stylesheet" />
+<script src="/prism.js"></script>
+
+
+<link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+
+</head>
+
+<body>
+
+<h1>Blotch</h1>
+
+<div class="menu">
+
+<a href="/">Home</a>
+
+<a href="/about">About</a>
+
+<a href="/projects">Projects</a>
+
+<a href="/contact">Contact</a>
+
+</div>
+
+
+
+<p>At MIT, in between the fall and spring semesters, students may optionally choose to participate in a one-month long "Independent Activities Period" (IAP) during which students can take classes or practical trainings.  During the IAP of my freshman year of college, I had the pleasure of enrolling in the Mobile Autonomous Systems Laboratory (MASLAB).  This occurred during January of 2022, so we referred to this course as MASLAB 2022.</p>
+
+<p>MASLAB is an MIT tradition in which students take one month to build an autonomous robot to play a specific game, typically involving the manipulation of small wooden blocks or balls.  MASLAB 2022 involved the collection of small wooden balls about 2 inches in diameter.</p>
+
+<p>My team and I was given the four weeks of January to design, build, integrate, and test a fully autonomous robot that could identify and collect wooden balls on a playing field.</p>
+
+<p>After the month was complete, our team was very excited and honored to tie for first prize in the MASLAB competition.</p>
+
+<h2>Our Team</h2>
+
+<p>Inspired by the innovative robotics company Boston Dynamics, we humorously selected the team name "Boston Statics".</p>
+
+<p>My team members were MIT undergraduates Brian Minnick, Diego Rivero, and Ethan Yang.  Brian took the lead on hardware design and Ethan developed the vast majority of the autonomy stack.</p>
+
+<h2>Our Robot</h2>
+
+<p>In line with our humorous selection of team name, we chose the name Blotch for our robot.  We felt it communicated well the hastiness of the engineering that it required as well as the large amount of hot glue that held our robot together.</p>
+
+<p>See below for an image of the final CAD.</p>
+
+<img src="/media/blotch-example.png" alt="Blotch">
+
+<h2>Hardware</h2>
+
+<p>Our robot's hardware primarily consisted of a front-mounted ball collection mechanism as well as two 3D printed spiral towers in order to store the balls collected.</p>
+
+<h2>Software</h2>
+
+<p>Our robot's autonomy stack ran on an Intel NUC, a very small PC that sells for about $200 to $400.  The Intel NUC ran Ubuntu 22.04 LTS, which supported the Robot Operating System 2 (ROS2).</p>
+
+<h3>Computer Vision</h3>
+
+<p>While ROS2 provided the overhead for the robot's operations, computer vision was performed by the Open Computer Vision library (OpenCV) running on Python 3 and a simple Logitech webcam.</p>
+
+<h3>Sensor & Actuator Control</h3>
+
+<p>Because the Intel NUC does not have input/output (I/O) pins for direct control of peripherals, robotic sensors and actuators (including the drive motors and encoders) were controlled using a Teensy 3.5 microcontroller, which is very similar to an Arduino Nano.</p>
+
+<p>The Teensy 3.5 was connected to the Intel NUC over USB and controlled using a proxy software named TAMProxy (or "Totally Another Microcontroller Proxy").  TAMProxy is an open-source program which has been under development specifically by MASLAB instructors for MASLAB students since January of 2016.</p>
+
+<p>The TAMProxy source code is available freely on GitHub at the following link.</p>
+
+<p><a href="https://maslab.mit.edu/2022/wiki/team03">https://maslab.mit.edu/2022/wiki/team03</a></p>
+
+<h2>MASLAB Website</h2>
+
+<p>More information about Blotch can be found on the MIT MASLAB Competitor's Wiki at the link below.</p>
+
+<p><a href="https://maslab.mit.edu/2022/wiki/team03">https://maslab.mit.edu/2022/wiki/team03</a></p>
+
+<h2>Credits</h2>
+
+<p>Thanks to MIT students Adi Mehrotra, Fischer Moseley, and John Zhang, among others, for teaching MASLAB 2022 and encouraging our team along the way.</p>
+
+<p>Thanks to MIT undergraduate Adrienne Lai (class of 2025) for organizing the MASLAB team.  Adrienne was unfortunately unable to join the team over January as she had another commitment, but we are still most grateful for her initiative in bringing the team together.</p>
+
+<p>Thanks to my teammates, Brian, Diego, and Ethan, for their constant enthusiasm, energy, and collaboration during the many long days in the machine shop.  Let alone their skill, creativity, perseverance, it was a pleasure to share their mere company on cold mornings and late nights that January. </p></body>
+
+</html>
