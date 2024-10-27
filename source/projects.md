@@ -20,6 +20,8 @@ Below are a number of projects I've worked on outside of the academic environmen
 
 ::tile[Carlo][Interpreted programming language][/projects/independent/carlo][/media/code.jpg]
 
+::tile[EZWordle][Wordle solver][/projects/independent/ezwordle][/media/code.jpg]
+
 ## Work Projects
 
 These are open-source projects that I've made significant contributions to while working in industry.
