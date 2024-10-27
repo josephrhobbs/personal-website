@@ -2,4 +2,4 @@
 
 ~
 
-Please contact me at [me@josephrhobbs.com](mailto:me@josephrhobbs.com).
+Please contact me via email at [me@josephrhobbs.com](mailto:me@josephrhobbs.com).

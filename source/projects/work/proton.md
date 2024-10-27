@@ -20,7 +20,7 @@ The asynchronous programming paradigm is critical for Proton (and many other net
 
 In a nutshell, a program is type-safe when it "can't go wrong."  More specifically, it's important that I can't apply a method to a data structure that doesn't have that method or otherwise process a data structure incorrectly.  Rust's zero-cost abstraction makes it an excellent choice for a complex program such as Proton.  The Rust compiler can optimize away all of the object-oriented complexity that I create, and yet it will still prevent me (and others) from making silly mistakes.
 
-## Simplicity
+### Simplicity
 
 Software should always be as simple as possible, but no simpler.  I didn't want to tie together a dozen APIs in the frontend or deal with a number of complex data structures... I wanted an interface that "just worked."
 
@@ -30,13 +30,13 @@ As explained in the below section on the structure of the Proton library, I have
 
 The Proton library is likely the most complex software package I've ever developed, and it contains a number of interconnected and interdependent elements.
 
-### Access Point Management
+## Access Point Management
 
 The top level of the Proton software stack contains the access point manager.  This is an API structure that is exposed to the end user for manipulation.
 
 The user may create a hotspot connection with a given SSID, password, and security protocol.  The user may then activate, deactivate, or delete that hotspot connection.  The user also can scan the access point's wireless network to obtain a list of connected network devices.
 
-### Device Management
+## Device Management
 
 One level below access point management is device management.  This layer of the software stack is responsible for discovering connected network devices.
 
@@ -44,25 +44,25 @@ Network device discovery is performed using two methods in tandem.  The first in
 
 Enter the second method of network device discovery: Address Resolution Protocol (ARP).  ARP is compartmentalized away from device management and is conducted by a separate collection of methods.  This keeps device management code from becoming too complex.  The ARP manager provides a list of devices by their IPv4 addresses and their corresponding MAC addresses.  The device manager uses this information to complete its own device list, which it may return to the end user via the access point manager.
 
-### ARP Management
+## ARP Management
 
 Address Resolution Protocol (ARP) behaviors are managed by this software stack layer.  The ARP manager interfaces with Layer 2 (Data Link Layer) of the Open Systems Interconnection (OSI) model via the network interface manager, and it sends ARP frames across the network requesting the hardware (MAC) address for each IPv4 address in the network range.
 
 The ARP manager requires a significant number of asynchronous programming structures.  This is because it must simultaneously send ARP requests and listen for their responses.  The Tokio package for Rust asynchronous programming provides all asynchronous functionality to the ARP manager. 
 
-### Network Interface Management
+## Network Interface Management
 
 The network interface manager provides direct interface to the Wi-Fi card of the access point.  It constructs individual ARP Request frames for the ARP manager, and it parses ARP Reply frames to be registered by the ARP manager.
 
-### Hotspot Configuration
+## Hotspot Configuration
 
 The Proton library requires a hotspot configuration data structure, exposed to the end user, that contains a full characterization of the hotspot on the access point.  Hotspot configuration structures contain: SSID, password, security type, frequency band, network gateway IPv4 address, and network range in IPv4 CIDR notation.
 
-### Hardware Addressing
+## Hardware Addressing
 
 The Proton library additionally requires abstractions over and methods on hardware (MAC) addresses.  The library implements these natively in a separate crate.
 
-### Error Handling
+## Error Handling
 
 Finally, the Proton library requires a shared error handling methodology, to streamline spftware development as well as debugging and the experience of library users.  The Proton implements a robust error handling system natively in order to facilitate safe error handling across the rest of the library.
 
