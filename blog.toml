@@ -22,4 +22,5 @@ include = [
     "bwb-part-ii-b.png",
     "bwb-part-iii.png",
     "bwb-simulation.png",
+    "wifi.png",
 ]
