@@ -8,7 +8,7 @@ Here are some projects I've worked on in a classroom environment!
 
 ::tile[Blotch][Autonomous robot][/projects/academic/blotch][/media/blotch.png]
 
-::tile[BWB][High-efficiency aircraft concept][/projects/academic/bwb][/media/bwb.jpg]
+::tile[BWB][High-efficiency aircraft concept][/projects/academic/blended-wing-body][/media/bwb.jpg]
 
 ## Independent Projects
 
