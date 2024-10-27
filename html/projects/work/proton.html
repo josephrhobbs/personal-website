@@ -75,13 +75,13 @@
 
 <p>The Proton library is likely the most complex software package I've ever developed, and it contains a number of interconnected and interdependent elements.</p>
 
-<h2>Access Point Management</h2>
+<h3>Access Point Management</h3>
 
 <p>The top level of the Proton software stack contains the access point manager.  This is an API structure that is exposed to the end user for manipulation.</p>
 
 <p>The user may create a hotspot connection with a given SSID, password, and security protocol.  The user may then activate, deactivate, or delete that hotspot connection.  The user also can scan the access point's wireless network to obtain a list of connected network devices.</p>
 
-<h2>Device Management</h2>
+<h3>Device Management</h3>
 
 <p>One level below access point management is device management.  This layer of the software stack is responsible for discovering connected network devices.</p>
 
@@ -89,25 +89,25 @@
 
 <p>Enter the second method of network device discovery: Address Resolution Protocol (ARP).  ARP is compartmentalized away from device management and is conducted by a separate collection of methods.  This keeps device management code from becoming too complex.  The ARP manager provides a list of devices by their IPv4 addresses and their corresponding MAC addresses.  The device manager uses this information to complete its own device list, which it may return to the end user via the access point manager.</p>
 
-<h2>ARP Management</h2>
+<h3>ARP Management</h3>
 
 <p>Address Resolution Protocol (ARP) behaviors are managed by this software stack layer.  The ARP manager interfaces with Layer 2 (Data Link Layer) of the Open Systems Interconnection (OSI) model via the network interface manager, and it sends ARP frames across the network requesting the hardware (MAC) address for each IPv4 address in the network range.</p>
 
 <p>The ARP manager requires a significant number of asynchronous programming structures.  This is because it must simultaneously send ARP requests and listen for their responses.  The Tokio package for Rust asynchronous programming provides all asynchronous functionality to the ARP manager. </p>
 
-<h2>Network Interface Management</h2>
+<h3>Network Interface Management</h3>
 
 <p>The network interface manager provides direct interface to the Wi-Fi card of the access point.  It constructs individual ARP Request frames for the ARP manager, and it parses ARP Reply frames to be registered by the ARP manager.</p>
 
-<h2>Hotspot Configuration</h2>
+<h3>Hotspot Configuration</h3>
 
 <p>The Proton library requires a hotspot configuration data structure, exposed to the end user, that contains a full characterization of the hotspot on the access point.  Hotspot configuration structures contain: SSID, password, security type, frequency band, network gateway IPv4 address, and network range in IPv4 CIDR notation.</p>
 
-<h2>Hardware Addressing</h2>
+<h3>Hardware Addressing</h3>
 
 <p>The Proton library additionally requires abstractions over and methods on hardware (MAC) addresses.  The library implements these natively in a separate crate.</p>
 
-<h2>Error Handling</h2>
+<h3>Error Handling</h3>
 
 <p>Finally, the Proton library requires a shared error handling methodology, to streamline spftware development as well as debugging and the experience of library users.  The Proton implements a robust error handling system natively in order to facilitate safe error handling across the rest of the library.</p>
 
