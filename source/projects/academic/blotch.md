@@ -40,11 +40,11 @@ While ROS2 provided the overhead for the robot's operations, computer vision was
 
 Because the Intel NUC does not have input/output (I/O) pins for direct control of peripherals, robotic sensors and actuators (including the drive motors and encoders) were controlled using a Teensy 3.5 microcontroller, which is very similar to an Arduino Nano.
 
-The Teensy 3.5 was connected to the Intel NUC over USB and controlled using a proxy software named TAMProxy (or "Totally Another Microcontroller Proxy").  TAMProxy is an open-source program which has been under development specifically by MASLAB instructors for MASLAB students since January of 2016.
+The Teensy 3.5 was connected to the Intel NUC over USB and controlled using a proxy software named TAMProxy (or "Totally A Microcontroller Proxy").  TAMProxy is an open-source program which has been under development specifically by MASLAB instructors for MASLAB students since January of 2016.
 
 The TAMProxy source code is available freely on GitHub at the following link.
 
-[https://maslab.mit.edu/2022/wiki/team03](https://maslab.mit.edu/2022/wiki/team03)
+[https://github.com/MASLAB/TAMProxy-Firmware](https://github.com/MASLAB/TAMProxy-Firmware)
 
 ## MASLAB Website
 
