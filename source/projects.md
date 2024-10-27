@@ -26,4 +26,4 @@ Below are a number of projects I've worked on outside of the academic environmen
 
 These are open-source projects that I've made significant contributions to while working in industry.
 
-::tile[Proton][Access point control software][/projects/work/proton][/media/wifi.png]
+::tile[Proton][Wireless access point control software][/projects/work/proton][/media/wifi.png]
