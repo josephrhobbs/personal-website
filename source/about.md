@@ -2,7 +2,7 @@
 
 ~
 
-::image[Joseph having breakfast][/media/me.jpg]
+::float[Joseph having breakfast][/media/me.jpg]
 
 Hello!  My name is Joseph, and I am a rising senior at MIT studying Aerospace Engineering and graduating in May 2025.
 
