@@ -20,7 +20,7 @@ Below are a number of projects I've worked on outside of the academic environmen
 
 ::tile[Carlo][Interpreted programming language][/projects/independent/carlo][/media/code.jpg]
 
-::tile[EZWordle][Wordle solver][/projects/independent/ezwordle][/media/code.jpg]
+::tile[EZWordle][Wordle solver][/projects/independent/wordle-solver][/media/code.jpg]
 
 ## Work Projects
 
