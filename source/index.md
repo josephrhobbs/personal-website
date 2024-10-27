@@ -10,4 +10,4 @@ You can head on over to [About](/about) to learn more about me, or you can check
 
 Here are the interesting engineering and design projects I'm currently working on!
 
-::notice[Coming soon!]
+::tile[Blog Builder][Static web framework][/projects/independent/blog-builder][/media/code.jpg]

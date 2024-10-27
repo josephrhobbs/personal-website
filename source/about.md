@@ -8,7 +8,7 @@ Hello!  My name is Joseph, and I am a rising senior at MIT studying Aerospace En
 
 Academically, I have particular interests in electrical and electronics engineering, structural mechanics, aerodynamics, numerical simulation, software development, and systems engineering.  I also enjoy designing things in Fusion 360 and programming in Python 3 or Rust.
 
-I'm a cadet in the Army ROTC and plan to commission into the U.S. Army Reserves in summer 2025.  Looking ahead to the future, I hope to work for a civilian engineering firm full-time while fulfilling my service obligation to the U.S. Army Reserves as a Cyber Warfare Officer.
+I'm a cadet in the Army ROTC and plan to commission into the U.S. Army Reserves in late 2025.  Looking ahead to the future, I hope to work for a civilian engineering firm full-time while fulfilling my part-time service obligation to the U.S. Army Reserves as a Cyber Warfare Officer.
 
 Outside of school, I enjoy spending time with the people in my life I love and care about.  I also enjoy running, playing the piano and guitar, and volunteering with my Catholic community.
 
