@@ -4,7 +4,7 @@
 
 ## Academic Projects
 
-Here are some projects I've worked on in a classroom environment!
+Here are some projects I've worked on in a classroom environment.
 
 ::tile[Blotch][Autonomous robot][/projects/academic/blotch][/media/blotch.png]
 
