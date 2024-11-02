@@ -10,6 +10,8 @@ Here are some projects I've worked on in a classroom environment.
 
 ::tile[BWB][High-efficiency aircraft concept][/projects/academic/blended-wing-body][/media/bwb.jpg]
 
+::tile[RSA Keychain][Cryptographic hardware accelerator][/projects/academic/cryptographic-hardware-accelerator][/media/key.jpg]
+
 ## Independent Projects
 
 Below are a number of projects I've worked on outside of the academic environment.
