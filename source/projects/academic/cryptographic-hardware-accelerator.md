@@ -10,7 +10,13 @@ Because we are creating a piece of hardware that can "lock" and "unlock" secure 
 
 ## System Architecture
 
-::notice[Coming soon!]
+The below block diagram represents a high-level overview of our project.  We plan to make the key and message sizes parametric, so we can change them throughout the design process without affecting the overall system architecture.  The bulk of the work will be performed by the encryption/decryption block, which will perform the calculations necessary to encrypt and decrypt messages using the RSA algorithm.
+
+::image[RSA Keychain Block Diagram][/media/rsa-block-diagram.jpg]
+
+An important note is that the RSA secret key is stored on the keychain hardware and is not accessible to the device to which it is connected.  We intentionally designed the keychain in this manner to maximize the security surrounding the secret key and ensure that it cannot be accessed by means of hardware vulnerabilities, such as Meltdown or Spectre.
+
+More information coming soon!
 
 ## Credits
 
