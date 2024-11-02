@@ -24,6 +24,8 @@ Below are a number of projects I've worked on outside of the academic environmen
 
 ::tile[EZWordle][Wordle solver][/projects/independent/wordle-solver][/media/code.jpg]
 
+::tile[RSVLM][Inviscid aerodynamics modeling software][/projects/independent/rsvlm][/media/vlm-wing.jpg]
+
 ## Work Projects
 
 These are open-source projects that I've made significant contributions to while working in industry.
