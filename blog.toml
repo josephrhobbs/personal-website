@@ -25,4 +25,5 @@ include = [
     "wifi.png",
     "key.jpg",
     "vlm-wing.jpg",
+    "rsa-block-diagram.png",
 ]
