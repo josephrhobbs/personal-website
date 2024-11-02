@@ -4,7 +4,7 @@
 
 ::float[Joseph having breakfast][/media/me.jpg]
 
-Hello!  My name is Joseph, and I am a rising senior at MIT studying Aerospace Engineering and graduating in May 2025.
+Hello!  My name is Joseph, and I am a senior at MIT studying Aerospace Engineering and graduating in May 2025.
 
 Academically, I have particular interests in electrical and electronics engineering, structural mechanics, aerodynamics, numerical simulation, software development, and systems engineering.  I also enjoy designing things in Fusion 360 and programming in Python 3 or Rust.
 
