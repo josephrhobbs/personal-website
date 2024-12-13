@@ -12,4 +12,4 @@ Coming soon!
 
 ## Credits
 
-I'm incredibly grateful to my teammates: Gabi McDonald (systems), Mollie Edmondson (weight), Phillip Hood (power), Hakan Chunton (dynamics), Marina Miller (propulsion), and Dana Bell (structures).  My write-up here is only on my contribution to the project, but our final design could never have been possible without the amazing 
+I'm incredibly grateful to my teammates: Gabi McDonald (systems), Mollie Edmondson (weight), Phillip Hood (power), Hakan Chunton (dynamics), Marina Miller (propulsion), and Dana Bell (structures).  My write-up here is only on my contribution to the project, and our final design could never have been possible without the passion, intelligence, and dedication of this amazing team.
