@@ -12,7 +12,7 @@ Here are the interesting engineering and design projects I'm currently working o
 
 ::tile[Blog Builder][Static web framework][/projects/independent/blog-builder][/media/code.jpg]
 
-# Recent Projects
+## Recent Projects
 
 I'm excited to share these other projects that I've completed very recently.
 
