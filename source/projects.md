@@ -12,13 +12,15 @@ Here are some projects I've worked on in a classroom environment.
 
 ::tile[RSA Keychain][Cryptographic hardware accelerator][/projects/academic/cryptographic-hardware-accelerator][/media/key.jpg]
 
+::tile[Surge One][Short take-off and landing regional aircraft][/projects/academic/surge-one][/media/airplane-propeller.jpg]
+
 ## Independent Projects
 
 Below are a number of projects I've worked on outside of the academic environment.
 
-::tile[Boron][Compiled programming language][/projects/independent/boron][/media/code.jpg]
-
 ::tile[Blog Builder][Static web framework][/projects/independent/blog-builder][/media/code.jpg]
+
+::tile[Boron][Compiled programming language][/projects/independent/boron][/media/code.jpg]
 
 ::tile[Carlo][Interpreted programming language][/projects/independent/carlo][/media/code.jpg]
 
