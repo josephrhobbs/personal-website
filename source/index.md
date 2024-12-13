@@ -12,4 +12,10 @@ Here are the interesting engineering and design projects I'm currently working o
 
 ::tile[Blog Builder][Static web framework][/projects/independent/blog-builder][/media/code.jpg]
 
+# Recent Projects
+
+I'm excited to share these other projects that I've completed very recently.
+
 ::tile[RSA Keychain][Cryptographic hardware accelerator][/projects/academic/cryptographic-hardware-accelerator][/media/key.jpg]
+
+::tile[Surge One][Short take-off and landing regional aircraft][/projects/academic/surge-one][/media/airplane-propeller.jpg]

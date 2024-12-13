@@ -6,7 +6,7 @@ While taking MIT's undergraduate course in aerodynamics (known among MIT student
 
 ::image[Boeing X48-B Blended Wing Body][/media/bwb-example.jpg]
 
-BWB aircraft offer many benefits, but its primary offering involves its increased efficiency in producing lift.  Traditional airplanes are composed of a fuselage with large wings attached.  The disadvantage of this design is that only the wings are capable in producing lift force, and the fuselage's large surface area creates large amounts of drag but no lift.  However, a BWB airplane's full surface area contributes to lift production, because a BWB aircraft is in essence a giant wing.
+BWB aircraft offer many benefits, but its primary offering involves its increased efficiency in producing lift.  Traditional airplanes are composed of a fuselage with large wings attached.  The disadvantage of this design is that only the wings are capable in producing lift force, and the fuselage's large surface area creates large amounts of drag but no lift.  However, a BWB airplane's full surface area contributes meaningfully to lift production, because a BWB aircraft is in essence a giant wing.
 
 This promise of increased lift production carries with it an improvement in fuel efficiency, which reduces fuel cost and the production of pollutants such as CO2 and organic particulates.
 
