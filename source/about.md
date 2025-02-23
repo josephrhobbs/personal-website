@@ -24,4 +24,4 @@ The [EB Garamond](https://fonts.google.com/specimen/EB+Garamond/about) font was 
 
 ### Images
 
-Unless otherwise indicated, all images are in the public domain.
+The profile picture above should not be reproduced without permission.  Unless otherwise indicated, all other images are in the public domain.
