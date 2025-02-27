@@ -18,7 +18,7 @@ An important note is that the RSA secret key is stored on the keychain hardware 
 
 ## Implementation
 
-The implementation process was highly intensive and required significant verification at every step of the way.  The most significant hardware module contained in our design was the encryption/decryption block, which had to evaluate expressions of the form x^y _mod_ z.  These expressions are the core of the RSA cryptosystem, so we spent the majority of our time on the implementation and verification of this hardware module.  We performed simulation using [Cocotb](https://cocotb.org), a Python-based testbench environment, which allowed us to automatically generate random inputs, simulate the performance of the hardware module, and check if the results of the hardware calculation matched the intended output.
+The implementation process was highly intensive and required significant verification at every step of the way.  The most significant hardware module contained in our design was the encryption/decryption block, which had to evaluate expressions of the form \( x^y \, \mathrm{mod} \, z \).  These expressions are the core of the RSA cryptosystem, so we spent the majority of our time on the implementation and verification of this hardware module.  We performed simulation using [Cocotb](https://cocotb.org), a Python-based testbench environment, which allowed us to automatically generate random inputs, simulate the performance of the hardware module, and check if the results of the hardware calculation matched the intended output.
 
 ## Challenges
 

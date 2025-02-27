@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <link href="/prism.css" rel="stylesheet" />
 <script src="/prism.js"></script>
 
@@ -63,7 +64,7 @@
 
 <h2>Implementation</h2>
 
-<p>The implementation process was highly intensive and required significant verification at every step of the way.  The most significant hardware module contained in our design was the encryption/decryption block, which had to evaluate expressions of the form x^y <em>mod</em> z.  These expressions are the core of the RSA cryptosystem, so we spent the majority of our time on the implementation and verification of this hardware module.  We performed simulation using <a href="https://cocotb.org">Cocotb</a>, a Python-based testbench environment, which allowed us to automatically generate random inputs, simulate the performance of the hardware module, and check if the results of the hardware calculation matched the intended output.</p>
+<p>The implementation process was highly intensive and required significant verification at every step of the way.  The most significant hardware module contained in our design was the encryption/decryption block, which had to evaluate expressions of the form \( x^y \, \mathrm{mod} \, z \).  These expressions are the core of the RSA cryptosystem, so we spent the majority of our time on the implementation and verification of this hardware module.  We performed simulation using <a href="https://cocotb.org">Cocotb</a>, a Python-based testbench environment, which allowed us to automatically generate random inputs, simulate the performance of the hardware module, and check if the results of the hardware calculation matched the intended output.</p>
 
 <h2>Challenges</h2>
 
