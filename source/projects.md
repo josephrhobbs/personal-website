@@ -14,6 +14,8 @@ Here are some projects I've worked on in a classroom environment.
 
 ::tile[Surge One][Short take-off and landing regional aircraft][/projects/academic/surge-one][/media/airplane-propeller.jpg]
 
+::tile[Differential Amplifier][Low-power amplifier in 22nm transistors][/projects/academic/differential-amplifier][/media/mosfet.jpg]
+
 ## Independent Projects
 
 Below are a number of projects I've worked on outside of the academic environment.
@@ -27,6 +29,8 @@ Below are a number of projects I've worked on outside of the academic environmen
 ::tile[EZWordle][Wordle solver][/projects/independent/wordle-solver][/media/code.jpg]
 
 ::tile[RSVLM][Inviscid aerodynamics modeling software][/projects/independent/rsvlm][/media/vlm-wing.jpg]
+
+::tile[RNASEQ Toolkit][Software toolkit for RNA sequencing analysis][/projects/independent/transcriptomics][/media/dna-rna.png]
 
 ## Work Projects
 

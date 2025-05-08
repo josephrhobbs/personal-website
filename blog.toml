@@ -27,4 +27,6 @@ include = [
     "vlm-wing.jpg",
     "rsa-block-diagram.png",
     "airplane-propeller.jpg",
+    "mosfet.jpg",
+    "dna-rna.png",
 ]
