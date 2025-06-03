@@ -14,8 +14,6 @@ Here are some projects I've worked on in a classroom environment.
 
 ::tile[Surge One][Short take-off and landing regional aircraft][/projects/academic/surge-one][/media/airplane-propeller.jpg]
 
-::tile[Differential Amplifier][Low-power amplifier in 22nm transistors][/projects/academic/differential-amplifier][/media/mosfet.jpg]
-
 ## Independent Projects
 
 Below are a number of projects I've worked on outside of the academic environment.

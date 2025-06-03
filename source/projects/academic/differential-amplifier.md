@@ -1,5 +1,0 @@
-# Differential Amplifier
-
-~
-
-Coming soon!
