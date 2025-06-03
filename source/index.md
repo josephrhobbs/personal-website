@@ -12,7 +12,7 @@ Here are the interesting engineering and design projects I'm currently working o
 
 ::tile[Blog Builder][Static web framework][/projects/independent/blog-builder][/media/code.jpg]
 
-::tile[RNASEQ Toolkit][Software toolkit for RNA sequencing analysis][/projects/independent/transcriptomics][/media/dna-rna.png]
+::tile[RNASEQ Toolkit][RNA sequencing analysis][/projects/independent/transcriptomics][/media/dna-rna.png]
 
 ## Recent Projects
 

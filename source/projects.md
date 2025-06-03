@@ -28,7 +28,7 @@ Below are a number of projects I've worked on outside of the academic environmen
 
 ::tile[RSVLM][Inviscid aerodynamics modeling software][/projects/independent/rsvlm][/media/vlm-wing.jpg]
 
-::tile[RNASEQ Toolkit][Software toolkit for RNA sequencing analysis][/projects/independent/transcriptomics][/media/dna-rna.png]
+::tile[RNASEQ Toolkit][RNA sequencing analysis][/projects/independent/transcriptomics][/media/dna-rna.png]
 
 ## Work Projects
 
