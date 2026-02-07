@@ -2,6 +2,8 @@
 
 ~
 
+::notice[I'm happy to announce that my website will be getting a new look soon!  In the meantime, I've left everything as it is.]
+
 Welcome to my website!
 
 You can head on over to [About](/about) to learn more about me, or you can check out my project portfolio at the [Projects](/projects) tab.
