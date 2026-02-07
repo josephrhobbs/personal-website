@@ -198,7 +198,7 @@
 
     div.byline {
         display: inline-flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -207,8 +207,8 @@
         margin: 10px;
         border-radius: 20px;
         text-decoration: none;
-        color: black;
-        font-size: 36px;
+        color: rgb(85, 85, 85);
+        font-size: 30px;
         font-family: "Outfit", sans-serif;
         font-weight: 600;
     }
@@ -406,7 +406,7 @@
         margin: 10px;
         border-radius: 20px;
         text-decoration: none;
-        color: black;
+        color: rgb(85, 85, 85);
         font-size: 54px;
         font-family: "Outfit", sans-serif;
         font-weight: 600;
