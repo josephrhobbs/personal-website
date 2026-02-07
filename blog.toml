@@ -4,8 +4,8 @@ style = "tech"
 icon = "media/favicon.ico"
 
 [menu]
-names = ["Home", "About", "Projects", "Contact"]
-links = ["/", "/about", "/projects", "/contact"]
+names = ["Home", "About", "Projects", "Articles"]
+links = ["/", "/about", "/projects", "/articles"]
 
 [analytics]
 tag = "analytics-tag.html"
