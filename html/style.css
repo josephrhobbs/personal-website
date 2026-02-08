@@ -209,7 +209,7 @@
         text-decoration: none;
         color: rgb(85, 85, 85);
         font-size: 30px;
-        font-family: "Outfit", sans-serif;
+        font-family: "Fira Code", monospace;
         font-weight: 600;
     }
 }
@@ -408,7 +408,7 @@
         text-decoration: none;
         color: rgb(85, 85, 85);
         font-size: 54px;
-        font-family: "Outfit", sans-serif;
+        font-family: "Fira Code", monospace;
         font-weight: 600;
     }
 }
