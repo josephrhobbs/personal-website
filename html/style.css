@@ -204,11 +204,10 @@
         width: 100%;
         min-height: 100px;
         height: auto;
-        margin: 10px;
         border-radius: 20px;
         text-decoration: none;
         color: rgb(85, 85, 85);
-        font-size: 30px;
+        font-size: 24px;
         font-family: "Fira Code", monospace;
         font-weight: 600;
     }
@@ -403,7 +402,6 @@
         width: 100%;
         min-height: 180px;
         height: auto;
-        margin: 10px;
         border-radius: 20px;
         text-decoration: none;
         color: rgb(85, 85, 85);
