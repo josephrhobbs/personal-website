@@ -2,6 +2,8 @@
 
 ~
 
+::byline[Joseph Hobbs][August 29, 2024]
+
 When I was in middle school, my parents began running a CrossFit program at their local gym.  As a ten-year-old CrossFit enthusiast, my parents entrusted me with the responsibility of maintaining the program website and posting the daily workout each day.
 
 This sounded like a complicated responsibility for a ten-year-old, but in reality it was no more complicated than pressing "Publish" on the Blogger website every night.  However, the job still sparked my interest in web development that would continue throughout my adolescent years.

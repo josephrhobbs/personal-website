@@ -2,6 +2,8 @@
 
 ~
 
+::byline[Joseph Hobbs][August 29, 2024]
+
 When I was in middle school, I learned how to code in Python.  I found the simple and self-documenting syntax fascinating and inspiring, and ever since I've always aspired to develop a programming language.
 
 Unfortunately, in my naivety, I didn't realize the great complexity and difficulty of the task I wanted to undertake.  Six years would pass before I was successful in developing my first working programming language, [Boron](/projects/independent/boron).

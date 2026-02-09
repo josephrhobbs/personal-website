@@ -2,7 +2,7 @@
 
 ~
 
-::byline[Joseph R. Hobbs][Feburary 7, 2026]
+::byline[Joseph R. Hobbs][October 26, 2024]
 
 At MIT, in between the fall and spring semesters, students may optionally choose to participate in a one-month long "Independent Activities Period" (IAP) during which students can take classes or practical trainings.  During the IAP of my freshman year of college, I had the pleasure of enrolling in the Mobile Autonomous Systems Laboratory (MASLAB).  This occurred during January of 2022, so we referred to this course as MASLAB 2022.
 

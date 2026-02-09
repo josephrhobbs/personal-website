@@ -2,6 +2,8 @@
 
 ~
 
+::byline[Joseph Hobbs][October 26, 2024]
+
 While taking MIT's undergraduate course in aerodynamics (known among MIT students as 16.100 or "sixteen one hundred"), I was assigned to a project team and instructed to design a Blended Wing Body (BWB) aircraft.  The following image is of a Boeing X48-B, a contemporary experimental aircraft that uses the Blended Wing Body geometry.
 
 ::image[Boeing X48-B Blended Wing Body][/media/bwb-example.jpg]

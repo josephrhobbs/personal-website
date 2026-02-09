@@ -2,6 +2,8 @@
 
 ~
 
+::byline[Joseph Hobbs][October 26, 2024]
+
 During the summer following my junior year, I was offered an internship at Adom Industries, a small start-up based in the Dallas-Fort Worth Metroplex in Texas.  As of the time of writing, Adom is in stealth mode right now, so I'll refrain from sharing the details of my work.  However, it involved a lot of wireless computer networking, and in the course of my project I began developing a Rust package for wireless access point management for Linux machines. 
 
 I love giving back to the greater software development community, and so I obtained permission from the company to release the code as open-source.  Adom graciously agreed, and so I released the Proton Access Point Management Library under the MIT License.

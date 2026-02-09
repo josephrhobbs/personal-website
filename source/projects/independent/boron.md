@@ -2,6 +2,8 @@
 
 ~
 
+::byline[Joseph Hobbs][August 29, 2024]
+
 When I was about twelve years old, I saw in Barnes & Noble a book about how to code.  Fascinated, I asked my mother if we could buy it.  Knowing my interest in all things technical, my mother permitted me.  Opening the book, I learned about the Python programming language and some of its basic features.
 
 I read through the exercises contained in the book and quickly taught myself Python.  Little did I know that I would be using it in my college computer science class years later.
