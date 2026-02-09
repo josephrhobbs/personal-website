@@ -26,7 +26,7 @@ Here are a couple of things I've worked on in my free time!
 
 ::tile[EZWordle][Wordle solver][/projects/independent/wordle-solver][/media/code.jpg]
 
-::tile[AeroLattice][Inviscid aerodynamics modeling software][/projects/independent/aerolattice][/media/vlm-wing.jpg]
+::tile[AeroLattice][Aerodynamics modeling software][/projects/independent/aerolattice][/media/vlm-wing.jpg]
 
 ## Work
 
