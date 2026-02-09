@@ -2,6 +2,6 @@
 
 ~
 
-::byline[Joseph Hobbs][February 8, 2026]
+::byline[Joseph Hobbs][February 9, 2026]
 
-Hello, world!
+The field of __control__
