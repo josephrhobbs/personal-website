@@ -28,7 +28,7 @@ Here are a couple of things I've worked on in my free time!
 
 ::tile[AeroLattice][Aerodynamics modeling software][/projects/independent/aerolattice][/media/vlm-wing.jpg]
 
-## Work
+## Open-Source
 
 Open-source work can be massively impactful, so I am grateful for the opportunities (however small) I've had to contribute to the open-source community.  Below, I've summarized my contribution to existing open-source projects.
 
