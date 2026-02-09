@@ -16,6 +16,6 @@ For this article, I'm restricting myself to __linear systems__.  Linear systems 
 
 \[ \dot{x} = A x + B u \]
 
-for system state \[ x \], control input \[ u \], and _constant_ matrices \[ A, B \].  Very few systems in our world are truly linear (rotation immediately introduces trigonometric functions, which are obviously not linear functions), but many systems can be considered "close" to linear in certain cases, so this is after all a useful representation.
+for system state \( x \), control input \( u \), and _constant_ matrices \( A, B \).  Very few systems in our world are truly linear (rotation immediately introduces trigonometric functions, which are obviously not linear functions), but many systems can be considered "close" to linear in certain cases, so this is after all a useful representation.
 
 ::notice[More coming soon!]
