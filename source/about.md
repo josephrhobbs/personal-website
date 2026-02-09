@@ -6,13 +6,19 @@
 
 Hello!  My name is Joseph, and I'm an engineer living and working in Durham, NC.
 
-I graduated from MIT in May 2025 with a bachelor's degree in Aerospace Engineering.  I'm very grateful for the diversity of subjects I had the opportunity to study, and my education had a particular focus on applying novel analytical, visual, and computational methods to the study and practice of engineering.  Academically, I have particular interests in electrical and electronics engineering, aerodynamics, structural mechanics, aerospace propulsion, theory of probability, signal processing, and convex optimization.  I also enjoy writing code in Python 3 or Rust, my two favorite programming languages.
+I graduated from MIT in May 2025 with a bachelor's degree in Aerospace Engineering.  I'm very grateful for the diversity of subjects I had the opportunity to study, and my education had a particular focus on applying novel analytical, visual, and computational methods to the study and practice of engineering.  Academically, I have particular interests in electrical and electronics engineering, aerodynamics, structural mechanics, and the intersection of probability theory, underactuated control, and convex optimization.  I also enjoy writing code in Python 3 or Rust, my two favorite programming languages.
 
 In late 2025, I commissioned into the U.S. Army Reserve, and I'll be serving our nation as a Cyber Warfare Officer starting in early 2026.
 
 When I'm not working or studying, I enjoy spending time with the people in my life I love and care about.  I also enjoy running, playing the piano and guitar, and volunteering with my Catholic community.
 
-Thank you for visiting my website!  I welcome you to explore it and learn more about the things I've worked on.  If you'd like to contact me, please send me an email at [me@josephrhobbs.com](mailto:me@josephrhobbs.com) and I will respond within the week.
+Thank you for visiting my website!  I welcome you to explore it and learn more about the things I've worked on.
+
+I'd love to hear from you!  The best method for reaching me is electronic mail.  Please contact me at
+
+::image[My contact information][/media/contact.png]
+
+and I will respond within the week.
 
 ## Credits
 
