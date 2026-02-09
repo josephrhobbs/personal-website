@@ -10,7 +10,13 @@ I've also written a few short posts about topics that interest me.  These didn't
 
 ## Projects
 
-::notice[Under construction!]
+::tile[BWB][High-efficiency aircraft concept][/projects/academic/blended-wing-body][/media/bwb.jpg]
+
+::tile[RSA Keychain][Cryptographic hardware accelerator][/projects/academic/cryptographic-hardware-accelerator][/media/key.jpg]
+
+::tile[Surge One][Blown-lift regional aircraft][/projects/academic/surge-one][/media/airplane-propeller.jpg]
+
+::tile[Blog Builder][Static web framework][/projects/independent/blog-builder][/media/code.jpg]
 
 ## Articles
 
