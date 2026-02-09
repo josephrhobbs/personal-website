@@ -18,7 +18,7 @@ Thank you for visiting my website!  I welcome you to explore it and learn more a
 
 I'd love to hear from you!  The best method for reaching me is electronic mail.  Please contact me at
 
-::image[My contact information][/media/contact.png]
+::titled[My contact information][/media/contact.png][You can also reach me by owl or carrier pigeon, though in practice I've found email most reliable.]
 
 and I will respond within the week.
 
