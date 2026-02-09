@@ -10,7 +10,7 @@ Unfortunately, in my naivety, I didn't realize the great complexity and difficul
 
 However, despite my satisfaction, I found absolutely no application for the Boron language, because it was simply C with different syntax.  I had no use or liking for C... I was not a software developer by training, and I didn't care for its clunky methods for memory management.
 
-Several months later, I found an application for my newfound understanding of computer language development, and I developed [Elemental](/projects/independent/elemental), a simple matrix processing program.  But Elemental too suffered the same pitfall as Boron... it was not unique.  Elemental was no different than MATLAB, except that Elemental had fewer than ten built-in functions and was agonizingly slow.
+Several months later, I found an application for my newfound understanding of computer language development, and I developed a simple language for linear algebra processing.  But this too suffered the same pitfall as Boron... it was not unique.  To be honest, my linear algebra language (which I dubbed "Elemental") was no different than MATLAB, except that (unlike MATLAB) Elemental had fewer than ten built-in functions and was agonizingly slow.  I'm ashamed to admit some matrix operations were even \[ \Theta(n!) \].
 
 Over the next year, I slowly came up with an idea for a project that had a potential application in my academic work.  I wanted an interpreted language that enabled symbolic manipulation of mathematical expressions.
 
@@ -24,11 +24,13 @@ In pursuit of the vision for the Carlo Language, I also implemented a LaTeX outp
 
 ## Interpreter Structure
 
-The Carlo Language is an interpreted programming language, and as such, it requires an interpreter.  I selected the Rust Programming Language for this task.  Its robust balance of speed and memory safety made it a strong candidate for the task.
+The Carlo Language is an interpreted programming language, and as such, it requires an interpreter.  I selected the Rust Programming Language for this task.  Rust is very performant (with all compiler optimizations, its speed rivals that of C++) and I feel I can manage memory more responsibly and intentionally than I can in C++.
 
 ## Language Features
 
 The Carlo Language currently includes support for basic arithmetic operations, many commonly used SI units and prefixes, and basic symbolic operations.
+
+More coming soon about Carlo!
 
 ## Planned Improvements
 
@@ -36,11 +38,11 @@ The Carlo Language is constantly under improvement, and future iterations will i
 
 ## What's in a Name?
 
-The Carlo Language is named for Carlo Acutis, a Catholic web developer born in 1991.  He was both an extraordinarily generous and sensitive young man as well as a highly proficient computer programmer.  He passed away at the age of 15 from leukemia and was buried in Assisi, Italy.
+The Carlo Language is named for St. Carlo Acutis, a young man born in Italy in 1991.  He was both an extraordinarily generous and sensitive young man as well as a highly gifted computer programmer.  He passed away at the age of 15 from leukemia and was buried in Assisi, Italy.
 
-Acutis was beatified by Pope Francis in 2020 and is celebrated and venerated among Catholics as a patron of computer programmers.
+Acutis was beatified by Pope Francis in 2020, and canonized by Pope Leo XIV in 2025.  He is celebrated and venerated among Catholics as a patron of computer programmers.
 
-You may read more about Acutis on [his Wikipedia page](https://en.wikipedia.org/wiki/Carlo_Acutis).
+I invite you to learn more about Acutis on [his Wikipedia page](https://en.wikipedia.org/wiki/Carlo_Acutis).
 
 ## Source Code
 
