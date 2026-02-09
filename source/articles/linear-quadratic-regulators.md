@@ -22,21 +22,15 @@ for system state \( x \in \mathbb{R}^d \), control input \( u \in \mathbb{R}^k \
 
 Notice that, for this linear system, \( x = 0, u = 0 \) is a _fixed point_.  That means that, when \( x = 0 \) and \( u = 0 \), then \( \dot{x} = 0 \) and the system doesn't change.  This doesn't mean that the system is _stable_ around \( x = 0 \)... if you _perfectly_ balance a pendulum upside-down, it will stay, but as soon as you bump it at all then it will fall.  Suppose we want to make the system stable around the fixed point \( x = 0 \), and we'd like to know what control input \( u \) to use.  One very simple to define cost is to use a __quadratic cost__.  At a given time, the cost function
 
-\[
-g(x, u) = x^\mathrm{T} Q x + u^\mathrm{T} R u
-\]
+\[ g(x, u) = x^\mathrm{T} Q x + u^\mathrm{T} R u \]
 
 quantifies how "bad" we are doing.  For \( Q \succeq 0, R \succeq 0 \), notice that \( g(0, 0) = 0 \) is the global minimum of \( g \).  This means that, when \( x \neq 0 \) or \( u \neq 0 \), the cost is strictly positive, meaning the system is a state less than ideal.  Because \( g \) only tells us about _instantaneous_ cost, we can integrate it to determine the total cost accrued over time.
 
-\[
-J(x, u) = \int_0^\infty \left( x^\mathrm{T} Q x + u^\mathrm{T} R u \right) \, \mathrm{d}t
-\]
+\[ J(x, u) = \int_0^\infty \left( x^\mathrm{T} Q x + u^\mathrm{T} R u \right) \, \mathrm{d}t \]
 
 Without proof, I will assert that, when \( u = -K x \) for some constant matrix \( K \), this reduces to
 
-\[
-J(x, u) = x^\mathrm{T} S x
-\]
+\[ J(x, u) = x^\mathrm{T} S x \]
 
 for some matrix \( S \succeq 0 \).
 
