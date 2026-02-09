@@ -471,4 +471,27 @@
     div.menu {
         display: none;
     }
+
+    img.float {
+        border-radius: 12px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        margin-left: 0px;
+        margin-right: 24px;
+        width: 25%;
+        height: auto;
+        display: block;
+        float: left;
+    }
+
+    img.full {
+        border-radius: 12px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        margin-left: 0px;
+        margin-right: 24px;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 }
