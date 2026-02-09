@@ -12,10 +12,10 @@ In recent years, classical control has given way to new ways of thinking about c
 
 ## Linear Systems
 
-For this article, I'm restricting myself to __linear systems__.  Linear systems are systems that obey
+For this article, I'm restricting myself to __linear systems__, obeying
 
 \[ \dot{x} = A x + B u \]
 
-for system state \( x \), control input \( u \), and _constant_ matrices \( A, B \).  Very few systems in our world are truly linear (rotation immediately introduces trigonometric functions, which are obviously not linear functions), but many systems can be considered "close" to linear in certain cases, so this is after all a useful representation.
+for system state \( x \in \mathbb{R}^d \), control input \( u \in \mathbb{R}^k \), and constant matrices \( A \in \mathbb{R}^{d \times d}, B \in \mathbb{R}^{d \times k} \).  Very few systems in our world are truly linear (rotation immediately introduces trigonometric functions, which are obviously not linear functions), but many systems can be considered "close" to linear in certain cases, so this is after all a useful representation.
 
-::notice[More coming soon!]
+
