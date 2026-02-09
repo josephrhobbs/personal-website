@@ -6,4 +6,4 @@ I created this website originally to share things about the projects that I've w
 
 These articles cover a variety of topics in mathematics, computer science, engineering, and physics.  I have made my best attempt to ensure these are accessible to an undergraduate engineering or computer science student, but please contact me if you would like clarification on something!  I hope that these articles are interesting to you, and perhaps even educational!
 
-::tile[LQR][Exploring optimal control][/articles/linear-quadratic-regulators][/media/learntk.jpg]
+::tile[LQR][Exploring optimal control][/articles/linear-quadratic-regulators][/media/code.jpg]
