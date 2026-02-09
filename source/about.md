@@ -20,7 +20,7 @@ I'd love to hear from you!  The best method for reaching me is electronic mail. 
 
 ::titled[My contact information][/media/contact.png][You can also reach me by owl or carrier pigeon, though in practice I've found email most reliable.]
 
-and I will respond within the week.
+and I will respond within the week.  (I've refrained from providing my address by the normal means to deter web scrapers.)
 
 ## Credits
 
