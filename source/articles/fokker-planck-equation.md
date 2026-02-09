@@ -1,4 +1,4 @@
-# Fokker-Planck Theorem
+# Fokker-Planck
 
 ~
 
