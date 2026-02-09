@@ -14,6 +14,8 @@ When I'm not working or studying, I enjoy spending time with the people in my li
 
 Thank you for visiting my website!  I welcome you to explore it and learn more about the things I've worked on.
 
+## Contact
+
 I'd love to hear from you!  The best method for reaching me is electronic mail.  Please contact me at
 
 ::image[My contact information][/media/contact.png]
