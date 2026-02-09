@@ -417,6 +417,7 @@
     body {
         background-color: white;
         font-size: 18px;
+        line-height: 24px;
         font-family: "EB Garamond", serif;
         padding-bottom: 80px;
     }
@@ -439,15 +440,6 @@
         transition: 0.4s;
         margin-top: 40px;
         margin-bottom: 20px;
-    }
-
-    h2::before {
-        content: "\2794";
-        font-size: 36px;
-        font-family: monospace;
-        font-style: normal;
-        left: 0px;
-        margin-right: 14px;
     }
 
     h3 {
@@ -474,5 +466,9 @@
     a {
         color: var(--flamered);
         text-decoration: none;
+    }
+    
+    div.menu {
+        display: none;
     }
 }
