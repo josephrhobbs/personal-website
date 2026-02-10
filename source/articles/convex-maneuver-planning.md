@@ -190,12 +190,24 @@ Every rank-1 matrix is psd.  Consider the rank-1 matrix \( M := q q^\mathrm{T} \
 
 \[ \begin{align*} x^\mathrm{T} q q^\mathrm{T} x &= \left( q^\mathrm{T} x \right)^\mathrm{T} q^\mathrm{T} x \\ &= c^2 \ge 0 \end{align*} \]
 
-Here, \( c = q^\mathrm{T} x \).  Therefore, by the definition of a psd matrix, every rank-1 matrix is psd. 
+Here, \( c = q^\mathrm{T} x \).  Therefore, by the definition of a psd matrix, every rank-1 matrix is psd. \( \blacksquare \)
 
 ::endmath
 
 ::proof[Shor's Relaxation]
 
-Coming soon!
+Every rank-1 matrix is psd.  Therefore, by changing the constraint \( \mathrm{rank}(M) = 1 \) to \( M \succeq 0 \) (meaning "M is psd"), we are not excluding any possible solutions (we are making the feasible region strictly larger).  Let \( Q \) be the relaxation of \( P \); that is, \( P \) had the rank-1 constraint and \( Q \) has the psd constraint.  Then, if \( M^\star \) is the minimizer of \( Q \), it minimizes the objective function within the set of all psd matrices.
+
+Assume that \( M^\star \) is rank-1.  Because every rank-1 matrix is psd, \( M^\star \) is the minimizer of the objective within the set of all rank-1 matrices.  Therefore, \( M^\star \) is the minimizer of \( P \). \( \blacksquare \)
 
 ::endmath
+
+## Solving to Optimality
+
+Thanks to Shor's relaxation, we now have the SDP
+
+\[ \begin{align*} Q: \min_M M_22 & \\ \text{subject to } M_22 &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \\ M &\succeq 0 \end{align*} \]
+
+where \( M \succeq 0 \) means "M is psd".  Fortunately for us, there exist off-the-shelf SDP solvers that allow us to solve \( Q \) to optimality.  I've chosen to use [CVXPY](https://www.cvxpy.org/), an excellent open-source solver for many types of convex optimization problems, including SDPs.
+
+::notice[Result coming soon!]
