@@ -60,7 +60,7 @@ Simplifying a bit, we can isolate relative measured position \( \Delta \hat{x} \
 
 \[ \therefore \ln\left( \frac{\mathbb{P}(\text{collision})}{b} \sqrt\frac{\pi \sigma^2}{2} \right) \approx -\frac{\Delta \hat{x}^2}{2\sigma^2} \]
 
-\[ \therefore -2 \sigma^2 \ln\left( \frac{\mathbb{P}(\text{collision})}{b} \sqrt\frac{\pi \sigma^2}{2} \right) \approx \Delta \hat{x}^2 \]
+\[ \therefore \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 \mathbb{P}(\text{collision})^2} \right) \approx \Delta \hat{x}^2 \]
 
 ::endmath
 
