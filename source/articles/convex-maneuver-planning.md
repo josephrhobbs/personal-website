@@ -4,7 +4,7 @@
 
 ::byline[Joseph Hobbs][Feburary 10, 2026]
 
-Recently, I've taken a great interest in the intersection of probability theory, optimization, and optimal control.  A recent paper by Z. Manchester's lab of MIT (formerly CMU), "Convex Maneuver Planning for Spacecraft Collision Avoidance" by F. Vega et al., found [here](https://roboticexplorationlab.org/projects/cvx_cola.html), caught my attention recently because it unifies optimal control and probability in the wonderfully fascinating (though incredibly harsh) environment of Earth orbit.  Here, I unpack the paper's main point by presenting a _highly_ simplified example of the methodology presented.
+Recently, I've taken a great interest in the intersection of probability theory, optimization, and optimal control.  A recent paper by Z. Manchester's lab of MIT (formerly CMU), "Convex Maneuver Planning for Spacecraft Collision Avoidance" by F. Vega et al., found [here](https://roboticexplorationlab.org/projects/cvx_cola.html), caught my attention recently because it unifies optimal control and probability in the wonderfully fascinating (though incredibly harsh) environment of Earth orbit.  Here, I unpack the paper's main point by presenting a _highly_ simplified example of the methodology.
 
 ## Collision Avoidance
 
@@ -38,7 +38,9 @@ Here, both \( \varepsilon \) variables are modeled as Gaussian measurement noise
 
 ::endmath
 
-Now that we've quantified the conjunction point and the measurement uncertainties, we can define spacecraft __probability of collision__.
+## Probability of Collision
+
+Now that we've quantified the conjunction point and the measurement uncertainties, we can define spacecraft __probability of collision__.  It turns out, however, that we won't actually care about this probability when we formulate our optimization program.  Rather, we'll care about the __relative position at conjunction__, which is easily determined using orbital dynamics simulation.
 
 ::definition[Probability of Collision and Relative Position]
 
@@ -58,10 +60,34 @@ Assuming that \( b^2 \) is much smaller than \( \sigma^2 \) (that is, assuming t
 
 Simplifying a bit, we can isolate relative measured position \( \Delta \hat{x} \) in terms of the collision probability.
 
-\[ \therefore \ln\left( \frac{\mathbb{P}(\text{collision})}{b} \sqrt\frac{\pi \sigma^2}{2} \right) \approx -\frac{\Delta \hat{x}^2}{2\sigma^2} \]
+\[ \ln\left( \frac{\mathbb{P}(\text{collision})}{b} \sqrt\frac{\pi \sigma^2}{2} \right) \approx -\frac{\Delta \hat{x}^2}{2\sigma^2} \]
 
 \[ \therefore \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 \mathbb{P}(\text{collision})^2} \right) \approx \Delta \hat{x}^2 \]
 
 ::endmath
 
-::notice[More coming soon!]
+## Avoiding Collision
+
+Let's recap what we've done so far.  We've determined a way to compute probability of collision, and we've figured out how to relate that to relative position at conjunction.  Suppose we input our known measurement covariances, and we get an unacceptably high probability of collision (maybe we want \( 10^{-6} \) or less, but we get \( 10^{-4} \), for example).  Put yourself in the shoes of Acme.  Are you about to lose your expensive, extremely sensitive satellite?
+
+Not necessarily.  Let's assume (for convenience of calculation) that you have one opportunity to save your satellite, by burning tangent to your orbit at exactly one half of an orbit before conjunction (namely, at \( \begin{bmatrix} -(R + h) & 0 \end{bmatrix}^\mathrm{T} \)).  However, you want to burn the minimum amount of fuel possible, because fuel is expensive and you want to maximize the lifespan of your satellite (no fuel means no more corrective maneuvers).  It turns out we can relate the fuel used to the change in the satellite's orbit using two important results: the Tsiolkovsky rocket equation and the Vis-Viva equation.
+
+::theorem[Tsiolkovsky Rocket Equation]
+
+Assume that a spacecraft, of initial mass \( m \), expends fuel mass \( \Delta m \).  The change in the spacecraft's velocity is given by
+
+\[ \Delta v = c \ln\frac{m}{m - \Delta m} \]
+
+where \( c \) is the _characteristic velocity_ of the spacecraft's propulsion system.  This value is determined by the chemical properties of the propellant and the efficiency of the propulsion system.
+
+::endmath
+
+::theorem[Vis-Viva Equation]
+
+Assume an object of mass \( m \) is orbiting a central body with mass \( M \gg m \) in an elliptical orbit with semimajor axis \( a \).  Then, when the body is a distance \( r \) from the center of the central body, the orbital velocity of that body is
+
+\[ v = \sqrt{ G M \left( \frac{2}{r} - \frac{1}{a} \right)} \]
+
+where \( G \) is the universal constant of gravitation.
+
+::endmath
