@@ -20,4 +20,6 @@ I've also written a few short posts about topics that interest me.  These didn't
 
 ## Articles
 
-::notice[Under construction!]
+::tile[Hardness of NLP][Why optimality is hard][/articles/hardness-of-nonlinear-programming][/media/code.jpg]
+
+::tile[Maneuver Planning][Optimizing LEO trajectories][/articles/convex-maneuver-planning][/media/earth.jpg]
