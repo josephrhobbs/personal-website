@@ -202,6 +202,8 @@ Assume that \( M^\star \) is rank-1.  Because every rank-1 matrix is psd, \( M^\
 
 ::endmath
 
+Note that, if the minimizer of \( Q \) is not rank-1, it turns out we can determine the "most similar" (in the least squares sense) rank-1 matrix to \( M^\star \) by taking \( \sigma_1 u_1 v_1^\mathrm{T} \), where \( \sigma_1 \) is the largest singular value of \( M^\star \) and \( u_1 \) and \( v_1 \) are the corresponding left and right singular vectors.
+
 ## Solving to Optimality
 
 Thanks to Shor's relaxation, we now have the SDP

@@ -54,7 +54,7 @@ A problem \( Q \) is _NP-hard_ if, for every problem \( R \) in NP, there exists
 
 ### Lemmas
 
-I also have two lemmas to present, which will help me significantly in proving Theorem 1.
+I also have two lemmas to present, which will help me significantly in proving the main theorem.
 
 ::lemma[Hardness of SAT]
 
@@ -84,10 +84,10 @@ Note that we have abused notation to omit cases of negatives like \( \neg x_1 \)
 
 ### Proof
 
-We can now prove Theorem 1!
+We can now prove our main theorem!
 
 ::proof[Hardness of NLP]
 
-By Lemma 2, any SAT problem can be reduced to an NLP in \( O(N + kn) \) time.  Therefore, a polynomial-time reduction \( L_1 \) exists from SAT to NLP.  By Lemma 1, SAT is NP-hard, which means there exists a polynomial-time reduction \( L_2 \) exists from any problem in NP to SAT.  Therefore, the reduction \( L_3 := L_1(L_2(\cdot)) \) is polynomial-time.  This means that \( L_3 \) is a polynomial-time reduction from any problem in NP to NLP.  By Definition 1, the existence of \( L_3 \) implies NLP is NP-hard.  \( \blacksquare \)
+By the second lemma, any SAT problem can be reduced to an NLP in \( O(N + kn) \) time.  Therefore, a polynomial-time reduction \( L_1 \) exists from SAT to NLP.  By the first lemma, SAT is NP-hard, which means there exists a polynomial-time reduction \( L_2 \) exists from any problem in NP to SAT.  Therefore, the reduction \( L_3 := L_1(L_2(\cdot)) \) is polynomial-time.  This means that \( L_3 \) is a polynomial-time reduction from any problem in NP to NLP.  By Definition 1, the existence of \( L_3 \) implies NLP is NP-hard.  \( \blacksquare \)
 
 ::endmath
