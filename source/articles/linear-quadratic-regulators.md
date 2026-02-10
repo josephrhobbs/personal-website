@@ -32,7 +32,7 @@ If you've never seen this before, I encourage you to take a moment to fully dige
 
 To understand the behavior of this system, it can be extremely helpful to first _linearize_ it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \).
 
-\[ f(x) \approx f(x^\star) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{theta}}{\partial \theta} & \frac{\partial \ddot{theta}}{\partial \dot{theta}} \end{bmatrix} \begin{bmatrix} \theta \\ \dot{\theta} \end{bmatrix} + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \]
+\[ f(x) \approx f(x^\star) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} \begin{bmatrix} \theta \\ \dot{\theta} \end{bmatrix} + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \]
 
 We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the __Jacobians__ (matrices of partial derivatives) at \( x = x^\star \), we get
 
