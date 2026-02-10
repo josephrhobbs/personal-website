@@ -36,7 +36,7 @@ To understand the behavior of this system, it can be extremely helpful to first 
 
 We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the __Jacobians__ (matrices of partial derivatives) at \( x = x^\star \) and \( u = 0 \), we get
 
-\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]
+\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \]
 
 Because \( f(x^\star, 0) = 0 \), we take our final linearized system as
 
@@ -47,6 +47,20 @@ Because this is only a _linear approximation_ of the inverted pendulum, we can't
 ## Classical Control
 
 More traditional methods of control, often called _classical_ control, focus on describing the dynamics of a __plant__ (the system to be controlled), deciding on the _desired_ dynamics, and then working backwards to determine a good __controller__ (an engineered system capable of changing the plant's dynamics).
+
+\[ \dot{x} = \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]
+
+Remember that this describes the dynamics of an _inverted_ pendulum (one balanced upside-down).  To start, we'll see if this is stable without a controller; if we bump the pendulum slightly, will it return to its original position?
+
+Our intuition tells us that, of course, it will not return to being upright but rather it will fall.  Let's show this mathematically.  The study of first-order _linear_ ODEs (such as the one we have here) tells us that solutions to the ODE \( \dot{x} = A x \) tend towards zero if all _eigenvalues_ of \( A \) are less than zero.  Without a control input \( u \), we have
+
+\[ \dot{x} = \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \]
+
+and the eigenvalues of \( A \) are given by
+
+\[ \begin{align*} & \lambda^2 - \frac{g}{\ell} = 0 \\ &\Rightarrow \lambda = \pm \sqrt\frac{g}{\ell} \end{align*} . \]
+
+Clearly, \( A \) has one positive eigenvalue, so the system is _unstable_, as we expected!
 
 ::notice[More coming soon!]
 
