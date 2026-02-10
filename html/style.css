@@ -215,7 +215,8 @@
 
     div.mathblock {
         padding: 24px;
-        background-color: rgb(200, 200, 200);
+        margin-bottom: 24px;
+        background-color: rgb(220, 220, 220);
         border-radius: 12px;
     }
 }
@@ -420,7 +421,8 @@
 
     div.mathblock {
         padding: 24px;
-        background-color: rgb(200, 200, 200);
+        margin-bottom: 24px;
+        background-color: rgb(220, 220, 220);
         border-radius: 12px;
     }
 }
@@ -509,7 +511,8 @@
 
     div.mathblock {
         padding: 24px;
-        background-color: rgb(200, 200, 200);
+        margin-bottom: 24px;
+        background-color: rgb(220, 220, 220);
         border-radius: 12px;
     }
 }
