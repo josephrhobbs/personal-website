@@ -122,11 +122,11 @@ Using our approximation above,
 
 Woah.  Let's digest this.  We have a relationship between known variables, our decision variable \( u \) (how much velocity we're going to add), and our maximum allowed probability of collision \( p \).  We'll simplify this to
 
-\[ u^2 \ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} . \]
+\[ u^2 \ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^4 . \]
 
 Our objective is rather simple: we just want to minimize the amount of velocity change (positive or negative), which in turn minimizes fuel used.  In all its glory then, here is our optimization program.
 
-\[ \begin{align*} P: \min_u u^2 & \\ \text{subject to } u^2 &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \end{align*} \]
+\[ \begin{align*} P: \min_u u^2 & \\ \text{subject to } u^2 &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^4 \end{align*} \]
 
 ## Dealing with Nonconvexity
 
@@ -142,7 +142,7 @@ This rather unfortunate optimization program is about to have a lucky day.  Fort
 
 and rewrite \( P \) in terms of \( M \) instead of \( u \).  Notice that \( M \) is rank-1, and this is an important constraint to ensure that the program respects this structure of \( M \).
 
-\[ \begin{align*} P: \min_M M_{22} & \\ \text{subject to } M_{22} &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \\ \mathrm{rank}(M) &= 1 \end{align*} \]
+\[ \begin{align*} P: \min_M M_{22} & \\ \text{subject to } M_{22} &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^4 \\ \mathrm{rank}(M) &= 1 \end{align*} \]
 
 This is no better than before; the set of all rank-1 matrices is nonconvex, so we haven't really fixed our problem.  But this is where Shor's relaxation takes the lead!  So that you can appreciate the full elegance of the relaxation, I've outlined the full proof for why it works.  You may, of course, skip ahead if you are not interested!
 
@@ -208,7 +208,7 @@ Note that, if the minimizer of \( Q \) is not rank-1, it turns out we can determ
 
 Thanks to Shor's relaxation, we now have the SDP
 
-\[ \begin{align*} Q: \min_M M_{22} & \\ \text{subject to } M_{22} &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \\ M &\succeq 0 \end{align*} \]
+\[ \begin{align*} Q: \min_M M_{22} & \\ \text{subject to } M_{22} &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^4 \\ M &\succeq 0 \end{align*} \]
 
 where \( M \succeq 0 \) means "M is psd".  Fortunately for us, there exist off-the-shelf SDP solvers that allow us to solve \( Q \) to optimality.  I've chosen to use [CVXPY](https://www.cvxpy.org/), an excellent open-source solver for many types of convex optimization problems, including SDPs.
 
