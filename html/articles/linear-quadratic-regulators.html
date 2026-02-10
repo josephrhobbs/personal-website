@@ -48,73 +48,7 @@
 
 
 
-<div class="byline"><div>Joseph Hobbs</div><div>February 9, 2026</div></div>
-
-<p>The world is full of complicated systems changing over time, interacting with one another, with themselves, and with their environment.  An incredible (and underappreciated) achievement of contemporary engineering is the study of <strong>control</strong>.  Control theorists seek to understand how both natural and engineered systems evolve, and how they can be controlled.</p>
-
-<h2>The Inverted Pendulum</h2>
-
-<p>Pendulums do not naturally balance upside-down, but suppose that we want one to anyways.  By sending the right torque commands to a motor at the pendulum's pivot, we can make the pendulum balance upside-down.  Here, we'll derive the dynamics for the pendulum and show how we can make a controller for a motor at the pivot, allowing the inverted pendulum to be stable.</p>
-
-<p>We define \( \theta \) to be the angle of the pendulum counterclockwise from the downward position.  That is, when the pendulum is hanging straight down, \( \theta = 0 \), and \( \theta \) increases as the pendulum rotates to the left (counterclockwise).  The torque acting on a pendulum due to gravity can be written as \( \tau = -m \ell g \sin\theta \), and the angular momentum can be written as \( m \ell^2 \dot{\theta} \).  We will also write as \( u \) the input torque from a motor placed at the pivot point.  Because total torque is rate of change of angular momentum, i.e.,</p>
-
-<p>\[ \tau = \frac{\partial L}{\partial t} \]</p>
-
-<p>we can show</p>
-
-<p>\[ \ddot{\theta} + \frac{g}{\ell} \sin\theta = u . \]</p>
-
-<p>This is the <strong>second-order ordinary differential equation</strong> (ODE) describing the dynamics of our pendulum.  Much of control theory is based on controlling first-order systems, however.  Fortunately for us, there is a rather easy way to write a second-order ODE as a first-order ODE.  If we define \( x := \begin{bmatrix} \theta & \dot{\theta} \end{bmatrix}^\mathrm{T} \), then we can write</p>
-
-<p>\[ \begin{bmatrix} \dot{\theta} \\ \ddot{\theta} \end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ u - \frac{g}{\ell} \sin\theta \end{bmatrix} , \]</p>
-
-<p>or, more succinctly,</p>
-
-<p>\[ \dot{x} = f(x, u) . \]</p>
-
-<p>If you've never seen this before, I encourage you to take a moment to fully digest it.  This is a <strong>state space</strong> representation of a second-order ODE in one variable as a first-order ODE in two variables!  First-order ODEs are extraordinarily well-studied, so we should take confidence that we can understand and explain this well.</p>
-
-<h2>Linearization</h2>
-
-<p>To understand the behavior of this system, it can be extremely helpful to first <em>linearize</em> it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \) and \( u = 0 \).</p>
-
-<p>\[ \begin{align*} f(x, u) \approx f(x^\star, 0) &+ \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} (x - x^\star) \\ & + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \end{align*} \]</p>
-
-<p>We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the <strong>Jacobians</strong> (matrices of partial derivatives) at \( x = x^\star \) and \( u = 0 \), we get</p>
-
-<p>\[ \begin{align*} f(x, u) \approx f(x^\star, 0) &+ \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \end{align*} \]</p>
-
-<p>Because \( f(x^\star, 0) = 0 \), we take our final linearized system as</p>
-
-<p>\[ f(x, u) = \dot{x} \approx \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \]</p>
-
-<p>Because this is only a <em>linear approximation</em> of the inverted pendulum, we can't assume this is always true; rather, we can only take this approximation within a "small neighborhood" of \( x = x^\star \) and \( u = 0 \).  It turns out that, in many cases, this is actually a safe assumption!</p>
-
-<h2>Classical Control</h2>
-
-<p>More traditional methods of control, often called <em>classical</em> control, focus on describing the dynamics of a <strong>plant</strong> (the system to be controlled), deciding on the <em>desired</em> dynamics, and then working backwards to determine a good <strong>controller</strong> (an engineered system capable of changing the plant's dynamics).</p>
-
-<p>\[ \dot{x} = \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]</p>
-
-<p>Remember that this describes the dynamics of an <em>inverted</em> pendulum (one balanced upside-down).  To start, we'll see if this is stable without a controller; if we bump the pendulum slightly, will it return to its original position?</p>
-
-<p>Our intuition tells us that, of course, it will not return to being upright but rather it will fall.  Let's show this mathematically.  The study of first-order <em>linear</em> ODEs (such as the one we have here) tells us that solutions to the ODE \( \dot{x} = A x \) tend towards zero if all <em>eigenvalues</em> of \( A \) are less than zero.  Without a control input \( u \), we have</p>
-
-<p>\[ \dot{x} = \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \]</p>
-
-<p>and the eigenvalues of \( A \) are given by</p>
-
-<p>\[ \begin{align*} & \lambda^2 - \frac{g}{\ell} = 0 \\ &\Rightarrow \lambda = \pm \sqrt\frac{g}{\ell} . \end{align*} \]</p>
-
-<p>Clearly, \( A \) has one positive eigenvalue, so the system is <em>unstable</em>, as we expected!</p>
-
-<div class="notice">More coming soon!</div>
-
-<h2>A Paradigm Shift</h2>
-
-<p>In recent years, classical control has given way to new ways of thinking about control.  Classical control has one major challenge: how do we determine what dynamics we want in the first place?  The problem becomes rather difficult in the presence of constraints like motor torque limits or minimizing chance of the physical collision of two objects.  For example, consider the case of the pendulum, but we pay a hefty price for every kilojoule of electrical energy expended by the motor.  How do we know what dynamics we "want", apart from anything that's stable and cheap?  Contemporary control theorists have begun reframing the problem of control as an <em>optimization</em>.  These methods of <em>optimal</em> control focus on describing a <strong>cost</strong> (penalty for "bad" outcomes) and then determining controllers that minimize that cost.</p>
-
-<div class="notice">More coming soon!</div>
+<div class="notice">Under construction!</div>
 
 </body>
 
