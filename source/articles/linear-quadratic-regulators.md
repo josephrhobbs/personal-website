@@ -4,7 +4,7 @@
 
 ::byline[Joseph Hobbs][February 9, 2026]
 
-The world is full of complicated systems changing over time, interacting with one another, with themselves, and with their environment.  It's difficult to comprehend just how ubiquitous these "systems" are, in the most general sense.  An incredible (and underappreciated) achievement of contemporary engineering is the study of __control__.  Control theorists seek to understand how both natural and engineered systems evolve, and how they can be controlled.
+The world is full of complicated systems changing over time, interacting with one another, with themselves, and with their environment.  An incredible (and underappreciated) achievement of contemporary engineering is the study of __control__.  Control theorists seek to understand how both natural and engineered systems evolve, and how they can be controlled.
 
 ## The Inverted Pendulum
 
@@ -30,17 +30,19 @@ If you've never seen this before, I encourage you to take a moment to fully dige
 
 ## Linearization
 
-To understand the behavior of this system, it can be extremely helpful to first _linearize_ it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \).
+To understand the behavior of this system, it can be extremely helpful to first _linearize_ it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \) and \( u = 0 \).
 
-\[ f(x) \approx f(x^\star) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} (x - x^\star) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \]
+\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} (x - x^\star) \\ & + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \end{align*} \]
 
 We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the __Jacobians__ (matrices of partial derivatives) at \( x = x^\star \) and \( u = 0 \), we get
 
-\[ f(x, u) \approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]
+\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]
 
 Because \( f(x^\star, 0) = 0 \), we take our final linearized system as
 
-\[ f(x, u) \approx \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} \begin{bmatrix} \theta \\ \dot{\theta} \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \]
+\[ f(x, u) = \dot{x} \approx \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \]
+
+Because this is only a _linear approximation_ of the inverted pendulum, we can't assume this is always true; rather, we can only take this approximation within a "small neighborhood" of \( x = x^\star \) and \( u = 0 \).  It turns out that, in many cases, this is actually a safe assumption!
 
 ## Classical Control
 

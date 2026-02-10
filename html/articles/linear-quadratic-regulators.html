@@ -50,7 +50,7 @@
 
 <div class="byline"><div>Joseph Hobbs</div><div>February 9, 2026</div></div>
 
-<p>The world is full of complicated systems changing over time, interacting with one another, with themselves, and with their environment.  It's difficult to comprehend just how ubiquitous these "systems" are, in the most general sense.  An incredible (and underappreciated) achievement of contemporary engineering is the study of <strong>control</strong>.  Control theorists seek to understand how both natural and engineered systems evolve, and how they can be controlled.</p>
+<p>The world is full of complicated systems changing over time, interacting with one another, with themselves, and with their environment.  An incredible (and underappreciated) achievement of contemporary engineering is the study of <strong>control</strong>.  Control theorists seek to understand how both natural and engineered systems evolve, and how they can be controlled.</p>
 
 <h2>The Inverted Pendulum</h2>
 
@@ -76,17 +76,19 @@
 
 <h2>Linearization</h2>
 
-<p>To understand the behavior of this system, it can be extremely helpful to first <em>linearize</em> it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \).</p>
+<p>To understand the behavior of this system, it can be extremely helpful to first <em>linearize</em> it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \) and \( u = 0 \).</p>
 
-<p>\[ f(x) \approx f(x^\star) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} (x - x^\star) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \]</p>
+<p>\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} (x - x^\star) \\ & + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \end{align*} \]</p>
 
 <p>We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the <strong>Jacobians</strong> (matrices of partial derivatives) at \( x = x^\star \) and \( u = 0 \), we get</p>
 
-<p>\[ f(x, u) \approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]</p>
+<p>\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]</p>
 
 <p>Because \( f(x^\star, 0) = 0 \), we take our final linearized system as</p>
 
-<p>\[ f(x, u) \approx \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} \begin{bmatrix} \theta \\ \dot{\theta} \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \]</p>
+<p>\[ f(x, u) = \dot{x} \approx \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \]</p>
+
+<p>Because this is only a <em>linear approximation</em> of the inverted pendulum, we can't assume this is always true; rather, we can only take this approximation within a "small neighborhood" of \( x = x^\star \) and \( u = 0 \).  It turns out that, in many cases, this is actually a safe assumption!</p>
 
 <h2>Classical Control</h2>
 
