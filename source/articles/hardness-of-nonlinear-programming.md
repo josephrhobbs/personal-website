@@ -38,7 +38,7 @@ Generally, the problem of solving NLPs is, unfortunately, __NP-hard__.
 
 ::theorem[Hardness of NLP]
 
-Let \( P \) be an NLP.  Then, solving \( P \) is NP-hard.
+Let \( P \) be an NLP.  Then, solving \( P \), in general, is NP-hard.
 
 ::endmath
 

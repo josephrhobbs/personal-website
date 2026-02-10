@@ -20,10 +20,48 @@ Imagine that two fictitious telecommunications companies, Acme Satellite and Gen
 
 ::definition[Conjunction Point]
 
-We take an Earth-centered inertial reference frame.  The equatorial plane, given by \( z = 0 \), contains the orbits of both the Acme and GenCom satellites.  We will call the __conjunction point__ \( P \) the point \( \begin{bmatrix} R + h & 0 \end{bmatrix}^\mathrm{T} \end{bmatrix} \).  At a defined time in the near future, both the Acme and GenCom satellites will pass through \( P \).
+We take an Earth-centered inertial reference frame.  The equatorial plane, given by \( z = 0 \), contains the orbits of both the Acme and GenCom satellites.  We will call the __conjunction point__ \( P \) the point \( \begin{bmatrix} R + h & 0 \end{bmatrix}^\mathrm{T} \).  At a defined time in the near future, both the Acme and GenCom satellites will pass through \( P \).
 
 ::endmath
 
+Suppose that we know both satellites are in the equatorial plane, but we have some _uncertainty_ on their position in that plane.
 
+::definition[Generative Models for Position Measurement]
 
-::notice[Under construction!]
+At the time when both satellites pass through \( P \), the measured position of each satellite will obey the following generative models.  Here, \( \hat{x} \) denotes a measured position and \( x \) denotes a true position.
+
+\[ \hat{x}_\mathrm{Acme} = x_\mathrm{Acme} + \varepsilon_\mathrm{Acme} \]
+
+\[ \hat{x}_\mathrm{GenCom} = x_\mathrm{GenCom} + \varepsilon_\mathrm{GenCom} \]
+
+Here, both \( \varepsilon \) variables are modeled as Gaussian measurement noise with zero mean and covariance according to \( \Sigma_\mathrm{Acme} \) and \( \Sigma_\mathrm{GenCom} \).
+
+::endmath
+
+Now that we've quantified the conjunction point and the measurement uncertainties, we can define spacecraft __probability of collision__.
+
+::definition[Probability of Collision and Relative Position]
+
+At the conjunction point \( P \), the Acme and GenCom satellites will experience their closest approach, which may involve collision.  At conjunction, we can define as the _b-plane_ the plane perpendicular to the relative velocity between the two satellites.  It is important to observe that, at conjunction, the relative position will lie completely within the b-plane.  In our case, the b-plane is defined by \( y = z = 0 \), because their relative velocity will lie entirely in the \( y \) direction.
+
+The relative position vector \( x_\mathrm{Acme} - x_\mathrm{GenCom} \), in general, has covariance \( \Sigma_\mathrm{Acme} + \Sigma_\mathrm{GenCom} \) assuming the measurement errors are independent.  The covariance of the _projection_ of the relative position vector into the b-plane, then, is
+
+\[ \sigma^2 := \begin{bmatrix} 1 & 0 \end{bmatrix} \left( \Sigma_\mathrm{Acme} + \Sigma_\mathrm{GenCom} \right) \begin{bmatrix} 1 \\ 0 \end{bmatrix} . \]
+
+Suppose collision will occur at conjunction if the two satellites' centers of mass pass within distance \( b \); that is, if the relative position in the b-plane lies between \( \Delta \hat{x} - b \) and \( \Delta \hat{x} + b \), where \( \Delta \hat{x} \) is the difference in measured positions (projected into the b-plane).  We can now work out the probability of collision by integrating the Gaussian PDF over the interval of collision.
+
+\[ \mathbb{P}(\text{collision}) = \int_{x = \Delta \hat{x} - b}^{x = \Delta \hat{x} + b} \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left( -\frac{x^2}{2\sigma^2} \right) \, \mathrm{d}x \]
+
+Assuming that \( b^2 \) is much smaller than \( \sigma^2 \) (that is, assuming that the measurement error is generally much larger than the size of the satellite itself), then it is safe to take this integral as constant around \( x = \Delta \hat{x} \).
+
+\[ \frac{\mathbb{P}(\text{collision})}{2b} \approx \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left( -\frac{\Delta \hat{x}^2}{2\sigma^2} \right) \]
+
+Simplifying a bit, we can isolate relative measured position \( \Delta \hat{x} \) in terms of the collision probability.
+
+\[ \therefore \ln\left( \frac{\mathbb{P}(\text{collision})}{b} \sqrt\frac{\pi \sigma^2}{2} \right) \approx -\frac{\Delta \hat{x}^2}{2\sigma^2} \]
+
+\[ \therefore -2 \sigma^2 \ln\left( \frac{\mathbb{P}(\text{collision})}{b} \sqrt\frac{\pi \sigma^2}{2} \right) \approx \Delta \hat{x}^2 \]
+
+::endmath
+
+::notice[More coming soon!]
