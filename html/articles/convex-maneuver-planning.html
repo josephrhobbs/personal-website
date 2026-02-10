@@ -172,6 +172,80 @@
 
 <p>Our objective is rather simple: we just want to minimize the amount of velocity change (positive or negative), which in turn minimizes fuel used.  In all its glory then, here is our optimization program.</p>
 
-<p>\[ \begin{align*} P: \min_u u^2 & \\ \text{subject to } u^2 &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \end{align*} \]</p></body>
+<p>\[ \begin{align*} P: \min_u u^2 & \\ \text{subject to } u^2 &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \end{align*} \]</p>
+
+<h2>Dealing with Nonconvexity</h2>
+
+<p>If you're familiar with optimization, you may see a very large issue in the program \( P \) that we've defined.  Our program \( P \) is a specific type of optimization program called a <strong>Quadratically Constrained Quadratic Program</strong> (QCQP).  It is rather unfortunate to encounter the strange and mystical QCQP.  Practitioners of optimization strongly prefer their programs to have <strong>convexity</strong>, and QCQPs in general are nonconvex.  This one, specifically, is certainly lacking in convexity, which makes solving it rather difficult.  I plan to link an article here soon about convexity.</p>
+
+<p>It is important to note that this <em>particular</em> program \( P \) is quite easy to solve, because it seems obvious that we can just select \( u \) such that the constraint is active.  However, in the full 3D case with multiple opportunities to thrust and more complex gravity models, this method falls apart rather quickly.  Because of that, we'll pretend as if that solution method is inaccessible to us.</p>
+
+<h3>Shor's Relaxation</h3>
+
+<p>This rather unfortunate optimization program is about to have a lucky day.  Fortunately, <strong>Shor's relaxation</strong> allows us to rewrite QCQPs as <strong>Semidefinite Programs</strong> (SDPs).  In general, SDPs are always convex by their definition, so we can solve SDPs very easily in comparison to QCQPs.  The trick of Shor's relaxation is to define a <strong>moment matrix</strong></p>
+
+<p>\[ M(u) := \begin{bmatrix} 1 & u \\ u & u^2 \end{bmatrix} \]</p>
+
+<p>and rewrite \( P \) in terms of \( M \) instead of \( u \).  Notice that \( M \) is rank-1, and this is an important constraint to ensure that the program respects this structure of \( M \).</p>
+
+<p>\[ \begin{align*} P: \min_M M_22 & \\ \text{subject to } M_22 &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \\ \mathrm{rank}(M) &= 1 \end{align*} \]</p>
+
+<p>This is no better than before; the set of all rank-1 matrices is nonconvex, so we haven't really fixed our problem.  But this is where Shor's relaxation takes the lead!  So that you can appreciate the full elegance of the relaxation, I've outlined the full proof for why it works.  You may, of course, skip ahead if you are not interested!</p>
+
+<div class="mathblock"><strong>Theorem. </strong><em>Shor's Relaxation.</em><br>
+
+<p>Given a rank-1 program \( P \) in decision variables \( M \), the program can be relaxed to SDP \( Q \) by replacing the constraint \( \mathrm{rank}(M) = 1 \) with the constraint \( M \succeq 0 \) (in other words, all eigenvalues of \( M \) are positive).  If the minimizer \( M^\star \) of SDP \( Q \) is rank-1, then the minimizer of \( P \) is \( M^\star \).</p>
+
+</div>
+
+<h3>Proof of Shor's Relaxation</h3>
+
+<div class="mathblock"><strong>Lemma. </strong><em>Nonconvexity of Rank-1.</em><br>
+
+<p>The set of all rank-1 matrices is nonconvex.  We prove this by counterexample.  Consider</p>
+
+<p>\[ M_1 = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix} \]</p>
+
+<p>\[ M_2 = \begin{bmatrix} 1 & 3 \\ 3 & 9 \end{bmatrix} \]</p>
+
+<p>The convex combination \( \alpha M_1 + (1 - \alpha) M_2 \) has eigenvalues</p>
+
+<p>\[ \lambda = \frac{5 + 5\alpha}{2} \pm \frac{\sqrt{29 \alpha^2 + 46 \alpha + 25}}{2} . \]</p>
+
+<p>It can be shown by graphical analysis that the convex combination has exactly one non-zero eigenvalue only when \( \alpha = 0 \) and \( \alpha = 1 \), but has two non-zero eigenvalues otherwise.  Because rank-1 matrices must have exactly one non-zero eigenvalue, and convex combinations of rank-1 matrices do not in general form rank-1 matrices, the set of rank-1 matrices is nonconvex. \( \blacksquare \)</p>
+
+</div>
+
+<div class="mathblock"><strong>Lemma. </strong><em>Convexity of Positive Semidefinite Set.</em><br>
+
+<p>The set of all positive semidefinite (psd) matrices is convex.  A psd matrix \( M \) obeys</p>
+
+<p>\[ x^\mathrm{T} M x \ge 0 \]</p>
+
+<p>for all \( x \).  Suppose \( M_1 \) and \( M_2 \) are psd.  Then, the convex combination \( \alpha M_1 + (1 - \alpha) M_2 \) has</p>
+
+<p>\[ \begin{align*} x^\mathrm{T} \left( \alpha M_1 + (1 - \alpha) M_2 \right) x &= \alpha x^\mathrm{T} M_1 x + (1 - \alpha) x^\mathrm{T} M_2 x \end{align*} \\ &= \alpha k_1 + (1 - \alpha) k_2 \]</p>
+
+<p>where \( k_1, k_2 \ge 0 \) because \( M_1 \) and \( M_2 \) are psd.  A convex combination of non-negative numbers is non-negative, so for any two psd matrices, their convex combination is psd.  Therefore, the set of all psd matrices is convex. \( \blacksquare \)</p>
+
+</div>
+
+<div class="mathblock"><strong>Lemma. </strong><em>Rank-1 Matrices are Positive Semidefinite.</em><br>
+
+<p>Every rank-1 matrix is psd.  Consider the rank-1 matrix \( M := q q^\mathrm{T} \) for some column vector \( q \).</p>
+
+<p>\[ \begin{align*} x^\mathrm{T} q q^\mathrm{T} x &= \left( q^\mathrm{T} x \right)^\mathrm{T} q^\mathrm{T} x \\ &= c^2 \ge 0 \end{align*} \]</p>
+
+<p>Here, \( c = q^\mathrm{T} x \).  Therefore, by the definition of a psd matrix, every rank-1 matrix is psd. </p>
+
+</div>
+
+<div class="mathblock"><strong>Proof. </strong><em>Shor's Relaxation.</em><br>
+
+<p>Coming soon!</p>
+
+</div>
+
+</body>
 
 </html>
