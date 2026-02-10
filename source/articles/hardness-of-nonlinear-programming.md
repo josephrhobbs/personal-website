@@ -4,6 +4,11 @@
 
 ::byline[Joseph Hobbs][February 10, 2026]
 
+In recent years I've taken up a great interest in the field of __optimization__.  The study of optimization formalizes an extraordinarily large class of problems that appear _literally all the time_ in mathematics, computer science, engineering, and the natural sciences.  Whenever we are presented with a collection of possible conclusions in natural science, design parameters in engineering, model parameters in statistics and machine learning, or other __decision variables__, we are asked to choose variables based on some __objective__.  For example, there are many, many possible bridges that are safe for their rated capacity, but some are more expensive to build, maintain, and repair than others.  The study of optimization helps us to formalize which choices we are making and why.
+
+Unfortunately for us, the computer science department has a habit of reminding us that optimization is hard.  Like, really hard.  When computer scientists use the word "hard" to describe a problem, they usually don't just mean "difficult" in a subjective sense; they usually mean that the problem lives in a class of problems called __NP-hard__.  Problems in NP-hard are the "most difficult" problems (by a very specific definition) that we know about.  And optimization is, in general, one of those problems.
+
+But not all hope is lost.  Optimization is NP-hard _in general_, but there are specific cases of optimization which are not!  In fact, many special cases of optimization live in a different class of problems called __P__, which are the "easiest" problems (by a very specific definition) that we can solve!  One class of optimization problems that lies (almost) entirely within P is __convex optimization__ problems.  In a future article, I will discuss in detail the topic of convexity and why we care so much about it.
 
 ## Review of Optimization
 
@@ -25,11 +30,23 @@ By increasing \( x \), we continually decrease the objective function, but we ca
 
 \[ \begin{align*} P_3: \min_x x^2 & \\ \text{subject to } x &\le 1 . \end{align*} \]
 
-Here, it's clear to see that \( x = 0 \) is the _minimizer_ of \( P_3 \), and the program is solved to optimality.  Generally, the problem of solving NLPs is __NP-hard__.  I've presented a proof below, if you're interested.  Otherwise, you may safely skip ahead!
+Here, it's clear to see that \( x = 0 \) is the _minimizer_ of \( P_3 \), and the program is solved to optimality.
+
+## Hardness of NLP
+
+Generally, the problem of solving NLPs is, unfortunately, __NP-hard__.
 
 Hardness of NLP.  __Theorem 1__.  Let \( P \) be an NLP.  Then, solving \( P \) is NP-hard.
 
+### Definition of NP-hardness
+
+Before I continue, I want to define NP-hardness explicitly.  Informally, a problem is NP-hard if any problem in NP can be converted into the problem in question.
+
 Hardness.  __Definition 1__.  A problem \( Q \) is _NP-hard_ if, for every problem \( R \) in NP, there exists a polynomial-time reduction \( L \) such that \( L(R) \) rewrites \( R \) as \( Q \).
+
+### Lemmas
+
+I also have two lemmas to present, which will help me significantly in proving Theorem 1.
 
 Hardness of SAT.  __Lemma 1__.  The problem of Boolean satisfiability (SAT) is NP-hard in the number of decision variables.  The problem of Boolean satisfiability is parameterized by decision variables \( x_i \) for \( i = 1, \cdots, N \) and an expression in conjunctive normal form (CNF), involving a finite number of terms joined by AND, where each term is a finite number of terms joined by OR.  For example, the following is CNF. 
 
@@ -49,6 +66,8 @@ for each CNF clause.  The first constraint enforces \( x_i \in \{ 0, 1 \} \), wh
 
 Note that we have abused notation to omit cases of negatives like \( \neg x_1 \).  In these cases, we modify the corresponding constraint as previously described.  With \( N \) decision variables, \( k \) CNF clauses, and a maximum of \( n \) decision variables per CNF clause, it is clear that _SAT can be reduced to NLP_ in \( O(N + kn) \) time.
 
-Hardness of NLP.  __Proof of Theorem 1__.  By Lemma 2, any SAT problem can be reduced to an NLP in \( O(N + kn) \) time.  Therefore, a polynomial-time reduction \( L_1 \) exists from SAT to NLP.  By Lemma 1, SAT is NP-hard, which means there exists a polynomial-time reduction \( L_2 \) exists from any problem in NP to SAT.  Therefore, the reduction \( L_3 := L_1(L_2(\cdot)) \) is polynomial-time.  This means that \( L_3 \) is a polynomial-time reduction from any problem in NP to NLP.  By Definition 1, the existence of \( L_3 \) implies NLP is NP-hard.  \( \blacksquare \)
+### Proof
 
-::notice[Under construction!]
+We can now prove Theorem 1!
+
+Hardness of NLP.  __Proof of Theorem 1__.  By Lemma 2, any SAT problem can be reduced to an NLP in \( O(N + kn) \) time.  Therefore, a polynomial-time reduction \( L_1 \) exists from SAT to NLP.  By Lemma 1, SAT is NP-hard, which means there exists a polynomial-time reduction \( L_2 \) exists from any problem in NP to SAT.  Therefore, the reduction \( L_3 := L_1(L_2(\cdot)) \) is polynomial-time.  This means that \( L_3 \) is a polynomial-time reduction from any problem in NP to NLP.  By Definition 1, the existence of \( L_3 \) implies NLP is NP-hard.  \( \blacksquare \)
