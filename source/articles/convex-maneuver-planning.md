@@ -74,9 +74,9 @@ Not necessarily.  Let's assume (for convenience of calculation) that you have on
 
 ::theorem[Tsiolkovsky Rocket Equation]
 
-Assume that a spacecraft, of initial mass \( m \), expends fuel mass \( \Delta m \).  The change in the spacecraft's velocity is given by
+Assume that a spacecraft, of initial mass \( m \), expends fuel mass \( \Delta m \).  The magnitude of the change \( u \) in the spacecraft's velocity is given by
 
-\[ \Delta v = c \ln\frac{m}{m - \Delta m} \]
+\[ u = c \ln\frac{m}{m - \Delta m} \]
 
 where \( c \) is the _characteristic velocity_ of the spacecraft's propulsion system.  This value is determined by the chemical properties of the propellant and the efficiency of the propulsion system.
 
@@ -91,3 +91,27 @@ Assume an object of mass \( m \) is orbiting a central body with mass \( M \gg m
 where \( G \) is the universal constant of gravitation.
 
 ::endmath
+
+From Vis-Viva, we know that initially, the semimajor axis of the spacecraft's orbit is
+
+\[ a = \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} . \]
+
+What happens we expend \( \Delta m \) of fuel by burning prograde (in the direction of our orbit)?  We'll pick up an extra velocity \( u \) and our orbit will cease to be a circle; instead, the point of burn will become __perigee__ (closest point to Earth) and the point exactly one half of an orbit later will become __apogee__ (farthest point from Earth).  This is why we are choosing to burn half of an orbit early; determining altitude at apogee is far easier than determining altitude in general for non-circular orbits.  The semimajor axis \( a \) is related to the radius at apogee \( r_a \) and the radius at perigee \( r_p \) like so.
+
+\[ 2a = r_a + r_p \]
+
+From this, we know that the new radius at apogee, after our corrective maneuver to avoid GenCom's satellite, looks like
+
+\[ \begin{align*} r_a &= 2a - r_p \\ &= 2 \left( \frac{2}{R + h} - \frac{(v + u)^2}{GM} \right)^{-1} - (R + h) \end{align*} . \]
+
+For small \( u \), we'll take a first-order Taylor series approximation to this, which will make our calculations later much easier.
+
+\[ r_a \approx (R + h) + \frac{4v}{GM} \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-2} u \]
+
+Finally, we'll use another Taylor approximation (around \( \Delta m = 0 \)) of the Tsiolkovsky rocket equation to determine the relationship between \( r_a \) and the amount of fuel used \( \Delta m \).
+
+\[ u \approx \frac{c}{m} \cdot \Delta m \]
+
+From this, we determine the all-important relationship between the radius at apogee \( r_a \) (remember that now, conjunction will happen at Acme's apogee) and the mass of fuel expended \( \Delta m \).
+
+\[ r_a \approx (R + h) + \frac{4v}{GM} \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-2} \frac{c}{m} \cdot \Delta m \]
