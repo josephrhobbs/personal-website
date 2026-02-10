@@ -10,31 +10,39 @@ The world is full of complicated systems changing over time, interacting with on
 
 Pendulums do not naturally balance upside-down, but suppose that we want one to anyways.  By sending the right torque commands to a motor at the pendulum's pivot, we can make the pendulum balance upside-down.  Here, we'll derive the dynamics for the pendulum and show how we can make a controller for a motor at the pivot, allowing the inverted pendulum to be stable.
 
-We define \( \theta \) to be the angle of the pendulum counterclockwise from the downward position.  That is, when the pendulum is hanging straight down, \( \theta = 0 \), and \( \theta \) increases as the pendulum rotates to the left (counterclockwise).  The torque acting on a pendulum due to gravity can be written as \( \tau = -m \ell g \sin\theta \), and the angular momentum can be written as \( m \ell^2 \dot{\theta} \).  Because torque is rate of change of angular momentum, i.e.,
+We define \( \theta \) to be the angle of the pendulum counterclockwise from the downward position.  That is, when the pendulum is hanging straight down, \( \theta = 0 \), and \( \theta \) increases as the pendulum rotates to the left (counterclockwise).  The torque acting on a pendulum due to gravity can be written as \( \tau = -m \ell g \sin\theta \), and the angular momentum can be written as \( m \ell^2 \dot{\theta} \).  We will also write as \( u \) the input torque from a motor placed at the pivot point.  Because total torque is rate of change of angular momentum, i.e.,
 
 \[ \tau = \frac{\partial L}{\partial t} \]
 
 we can show
 
-\[ \ddot{\theta} + \frac{g}{\ell} \sin\theta = 0 . \]
+\[ \ddot{\theta} + \frac{g}{\ell} \sin\theta = u . \]
 
 This is the __second-order ordinary differential equation__ (ODE) describing the dynamics of our pendulum.  Much of control theory is based on controlling first-order systems, however.  Fortunately for us, there is a rather easy way to write a second-order ODE as a first-order ODE.  If we define \( x := \begin{bmatrix} \theta & \dot{\theta} \end{bmatrix}^\mathrm{T} \), then we can write
 
-\[ \begin{bmatrix} \dot{\theta} \\ \ddot{\theta} \end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ -\frac{g}{\ell} \sin\theta \end{bmatrix} , \]
+\[ \begin{bmatrix} \dot{\theta} \\ \ddot{\theta} \end{bmatrix} = \begin{bmatrix} \dot{\theta} \\ u - \frac{g}{\ell} \sin\theta \end{bmatrix} , \]
 
 or, more succinctly,
 
-\[ \dot{x} = f(x) . \]
+\[ \dot{x} = f(x, u) . \]
 
 If you've never seen this before, I encourage you to take a moment to fully digest it.  This is a __state space__ representation of a second-order ODE in one variable as a first-order ODE in two variables!  First-order ODEs are extraordinarily well-studied, so we should take confidence that we can understand and explain this well.
 
 ## Linearization
 
-::notice[Coming soon!]
+To understand the behavior of this system, it can be extremely helpful to first _linearize_ it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \).
+
+\[ f(x) \approx f(x^\star) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{theta}}{\partial \theta} & \frac{\partial \ddot{theta}}{\partial \dot{theta}} \end{bmatrix} \begin{bmatrix} \theta \\ \dot{\theta} \end{bmatrix} + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \]
+
+We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the __Jacobians__ (matrices of partial derivatives) at \( x = x^\star \), we get
+
+\[ f(x) \approx f(x^\star) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} \begin{bmatrix} \theta \\ \dot{\theta} \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} u \]
 
 ## Classical Control
 
 More traditional methods of control, often called _classical_ control, focus on describing the dynamics of a __plant__ (the system to be controlled), deciding on the _desired_ dynamics, and then working backwards to determine a good __controller__ (an engineered system capable of changing the plant's dynamics).
+
+::notice[More coming soon!]
 
 ## A Paradigm Shift
 
