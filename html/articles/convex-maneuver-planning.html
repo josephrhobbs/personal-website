@@ -50,16 +50,22 @@
 
 <div class="byline"><div>Joseph Hobbs</div><div>February 10, 2026</div></div>
 
-<p>Recently, I've taken a great interest in the intersection of probability theory, optimization, and optimal control.  The last three decades or so has witnessed a tremendous amount of research in the field of <strong>convex optimization</strong>, which focuses on an extremely important subset of optimization problems.</p>
-
-<p>A recent paper by Z. Manchester's lab of MIT (formerly CMU), "Convex Maneuver Planning for Spacecraft Collision Avoidance" by F. Vega et al. (found [here](https://roboticexplorationlab.org/projects/cvx_cola.html)), caught my attention recently because it unifies optimal control and probability in the wonderfully fascinating (though incredibly harsh) environment of Earth orbit.  Here, I unpack the paper's main point by presenting a (highly) simplified example of the methodology presented.</p>
+<p>Recently, I've taken a great interest in the intersection of probability theory, optimization, and optimal control.  A recent paper by Z. Manchester's lab of MIT (formerly CMU), "Convex Maneuver Planning for Spacecraft Collision Avoidance" by F. Vega et al. (found [here](https://roboticexplorationlab.org/projects/cvx_cola.html)), caught my attention recently because it unifies optimal control and probability in the wonderfully fascinating (though incredibly harsh) environment of Earth orbit.  Here, I unpack the paper's main point by presenting a (highly) simplified example of the methodology presented.</p>
 
 <h2>Review of Optimization</h2>
 
 <p>For those unacquainted, the study of optimization formalizes "optimization problems" as <strong>optimization programs</strong>.  The field makes formal distinctions between various programs and provides rigorous, certifiable methods for solving them.  The most general optimization program is the <strong>Nonlinear Program</strong> (NLP).</p>
 
-<p>\[ P : \begin{align*} \min_x & f(x) \\ \text{subject to } & g_i(x) \le 0 \\ & h_i(x) = 0 \end{align*} \]</p>
+<p>\[ \begin{align*} P: \min_x f(x) & \\ \text{subject to } g_i(x) &\le 0 \\ h_j(x) &= 0 \end{align*} \]</p>
 
-<p>Here, the optimization program \( P \) is an NLP.</p></body>
+<p>Here, the optimization program \( P \) is an NLP because we make <em>no assumptions</em> about the behavior of \( f \), \( g \), or \( h \).  These functions could be extraordinarily "nice" (linear functions, maybe!) or terribly behaved functions.  We call the vector \( x \) the <strong>decision variable</strong>, the scalar function \( f \) the <strong>objective</strong>, and the inequalities and equalities below the <strong>constraints</strong>.</p>
+
+<p>Generally, NLPs are <strong>NP-hard</strong>.</p>
+
+<p><strong>Proof</strong></p><p>.</p>
+
+<div class="notice">Under construction!</div>
+
+</body>
 
 </html>
