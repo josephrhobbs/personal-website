@@ -32,11 +32,11 @@ If you've never seen this before, I encourage you to take a moment to fully dige
 
 To understand the behavior of this system, it can be extremely helpful to first _linearize_ it about the desired fixed point, \( x^\star = \begin{bmatrix} \pi & 0 \end{bmatrix}^\mathrm{T} \).  We write the Taylor series of \( f(x, u) \) in both \( x \) and \( u \) about \( x^\star \) and \( u = 0 \).
 
-\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} (x - x^\star) \\ & + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \end{align*} \]
+\[ \begin{align*} f(x, u) \approx f(x^\star, 0) &+ \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial \theta} & \frac{\partial \dot{\theta}}{\partial \dot{\theta}} \\ \frac{\partial \ddot{\theta}}{\partial \theta} & \frac{\partial \ddot{\theta}}{\partial \dot{\theta}} \end{bmatrix} (x - x^\star) \\ & + \begin{bmatrix} \frac{\partial \dot{\theta}}{\partial u} \\ \frac{\partial \ddot{\theta}}{\partial u} \end{bmatrix} u \end{align*} \]
 
 We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the __Jacobians__ (matrices of partial derivatives) at \( x = x^\star \) and \( u = 0 \), we get
 
-\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \end{align*} \]
+\[ \begin{align*} f(x, u) \approx f(x^\star, 0) &+ \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \end{align*} \]
 
 Because \( f(x^\star, 0) = 0 \), we take our final linearized system as
 
@@ -58,7 +58,7 @@ Our intuition tells us that, of course, it will not return to being upright but 
 
 and the eigenvalues of \( A \) are given by
 
-\[ \begin{align*} & \lambda^2 - \frac{g}{\ell} = 0 \\ &\Rightarrow \lambda = \pm \sqrt\frac{g}{\ell} \end{align*} . \]
+\[ \begin{align*} & \lambda^2 - \frac{g}{\ell} = 0 \\ &\Rightarrow \lambda = \pm \sqrt\frac{g}{\ell} . \end{align*} \]
 
 Clearly, \( A \) has one positive eigenvalue, so the system is _unstable_, as we expected!
 
