@@ -212,4 +212,6 @@ Thanks to Shor's relaxation, we now have the SDP
 
 where \( M \succeq 0 \) means "M is psd".  Fortunately for us, there exist off-the-shelf SDP solvers that allow us to solve \( Q \) to optimality.  I've chosen to use [CVXPY](https://www.cvxpy.org/), an excellent open-source solver for many types of convex optimization problems, including SDPs.
 
-::notice[Result coming soon!]
+I've posted on [GitHub](https://github.com/josephrhobbs/convex-maneuver-planning) the source code for solving this problem.  I invite you to download it and play around!
+
+I set a maximum allowable probability of pollision at \( 10^{-6} \), though of course you may set it higher or lower if you wish.  At an altitude of 800 kilometers, with reasonably sized satellites and covariances, the required \( u \) is on the order of 10 centimeters per second.  This seems reasonable, as the satellites are only a few meters across and do not need to miss each other by much.  Ironically, dropping the threshold to \( 10^{-9} \) only increases the required \( u \) by a few centimeters per second!
