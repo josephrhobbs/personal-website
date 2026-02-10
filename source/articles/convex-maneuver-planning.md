@@ -24,4 +24,6 @@ We take an Earth-centered inertial reference frame.  The equatorial plane, given
 
 ::endmath
 
+
+
 ::notice[Under construction!]
