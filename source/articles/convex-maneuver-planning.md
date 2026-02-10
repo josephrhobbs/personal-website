@@ -196,9 +196,9 @@ Here, \( c = q^\mathrm{T} x \).  Therefore, by the definition of a psd matrix, e
 
 ::proof[Shor's Relaxation]
 
-Every rank-1 matrix is psd.  Therefore, by changing the constraint \( \mathrm{rank}(M) = 1 \) to \( M \succeq 0 \) (meaning "M is psd"), we are not excluding any possible solutions (we are making the feasible region strictly larger).  Let \( Q \) be the relaxation of \( P \); that is, \( P \) had the rank-1 constraint and \( Q \) has the psd constraint.  Then, if \( M^\star \) is the minimizer of \( Q \), it minimizes the objective function within the set of all psd matrices.
+Every rank-1 matrix is psd, by the third lemma.  Therefore, by changing the constraint \( \mathrm{rank}(M) = 1 \) to \( M \succeq 0 \) (meaning "M is psd"), we are not excluding any possible solutions (we are making the feasible region strictly larger).  Let \( Q \) be the relaxation of \( P \); that is, \( P \) had the rank-1 constraint and \( Q \) has the psd constraint.  \( P \) is nonconvex by the first lemma, but \( Q \) is convex by the second lemma.  Then, if \( M^\star \) is the minimizer of \( Q \), it minimizes the objective function within the set of all psd matrices.
 
-Assume that \( M^\star \) is rank-1.  Because every rank-1 matrix is psd, \( M^\star \) is the minimizer of the objective within the set of all rank-1 matrices.  Therefore, \( M^\star \) is the minimizer of \( P \). \( \blacksquare \)
+Assume that \( M^\star \) is rank-1.  Because every rank-1 matrix is psd, \( M^\star \) is the minimizer of the objective within the set of all rank-1 matrices.  Then, \( M^\star \) is the minimizer of \( P \). \( \blacksquare \)
 
 ::endmath
 
