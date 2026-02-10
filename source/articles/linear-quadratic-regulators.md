@@ -36,7 +36,7 @@ To understand the behavior of this system, it can be extremely helpful to first 
 
 We can obtain a linear approximation of \( f(x, u) \) by only taking the Taylor series to the linear terms.  Evaluating the __Jacobians__ (matrices of partial derivatives) at \( x = x^\star \) and \( u = 0 \), we get
 
-\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \]
+\[ \begin{align*} f(x, u) &\approx f(x^\star, 0) + \begin{bmatrix} 0 & 1 \\ \frac{g}{\ell} & 0 \end{bmatrix} (x - x^\star) \\ &+ \begin{bmatrix} 0 \\ 1 \end{bmatrix} u . \end{align*} \]
 
 Because \( f(x^\star, 0) = 0 \), we take our final linearized system as
 
