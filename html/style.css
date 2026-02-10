@@ -212,6 +212,12 @@
         font-family: "Fira Code", monospace;
         font-weight: 600;
     }
+
+    div.mathblock {
+        padding: 24px;
+        background-color: rgb(200, 200, 200);
+        border-radius: 12px;
+    }
 }
 
 @media screen and (max-device-width: 768px) {
@@ -411,6 +417,12 @@
         font-family: "Fira Code", monospace;
         font-weight: 600;
     }
+
+    div.mathblock {
+        padding: 24px;
+        background-color: rgb(200, 200, 200);
+        border-radius: 12px;
+    }
 }
 
 @media print {
@@ -493,5 +505,11 @@
         width: 50%;
         height: auto;
         display: block;
+    }
+
+    div.mathblock {
+        padding: 24px;
+        background-color: rgb(200, 200, 200);
+        border-radius: 12px;
     }
 }
