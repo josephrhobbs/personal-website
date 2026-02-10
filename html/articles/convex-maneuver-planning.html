@@ -116,17 +116,7 @@
 
 <p>Let's recap what we've done so far.  We've determined a way to compute probability of collision, and we've figured out how to relate that to relative position at conjunction.  Suppose we input our known measurement covariances, and we get an unacceptably high probability of collision (maybe we want \( 10^{-6} \) or less, but we get \( 10^{-4} \), for example).  Put yourself in the shoes of Acme.  Are you about to lose your expensive, extremely sensitive satellite?</p>
 
-<p>Not necessarily.  Let's assume (for convenience of calculation) that you have one opportunity to save your satellite, by burning tangent to your orbit at exactly one half of an orbit before conjunction (namely, at \( \begin{bmatrix} -(R + h) & 0 \end{bmatrix}^\mathrm{T} \)).  However, you want to burn the minimum amount of fuel possible, because fuel is expensive and you want to maximize the lifespan of your satellite (no fuel means no more corrective maneuvers).  It turns out we can relate the fuel used to the change in the satellite's orbit using two important results: the Tsiolkovsky rocket equation and the Vis-Viva equation.</p>
-
-<div class="mathblock"><strong>Theorem. </strong><em>Tsiolkovsky Rocket Equation.</em><br>
-
-<p>Assume that a spacecraft, of initial mass \( m \), expends fuel mass \( \Delta m \).  The magnitude of the change \( u \) in the spacecraft's velocity is given by</p>
-
-<p>\[ u = c \ln\frac{m}{m - \Delta m} \]</p>
-
-<p>where \( c \) is the <em>characteristic velocity</em> of the spacecraft's propulsion system.  This value is determined by the chemical properties of the propellant and the efficiency of the propulsion system.</p>
-
-</div>
+<p>Not necessarily.  Let's assume (for convenience of calculation) that you have one opportunity to save your satellite, by burning tangent to your orbit at exactly one half of an orbit before conjunction (namely, at \( \begin{bmatrix} -(R + h) & 0 \end{bmatrix}^\mathrm{T} \)).  However, you want to burn the minimum amount of fuel possible, because fuel is expensive and you want to maximize the lifespan of your satellite (no fuel means no more corrective maneuvers).  We'll also assume that fuel use is monotonically increasing in magnitude of velocity change; more velocity change, more fuel used.  It turns out we can relate velocity change to changes in the satellite's orbit using an important result from orbital mechanics: the Vis-Viva equation.</p>
 
 <div class="mathblock"><strong>Theorem. </strong><em>Vis-Viva Equation.</em><br>
 
@@ -154,12 +144,34 @@
 
 <p>\[ r_a \approx (R + h) + \frac{4v}{GM} \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-2} u \]</p>
 
-<p>Finally, we'll use another Taylor approximation (around \( \Delta m = 0 \)) of the Tsiolkovsky rocket equation to determine the relationship between \( r_a \) and the amount of fuel used \( \Delta m \).</p>
+<h2>Formulating the Optimization</h2>
 
-<p>\[ u \approx \frac{c}{m} \cdot \Delta m \]</p>
+<p>One more time: let's recap.  We know how to compute probability of collision from relative position at conjunction, and vice versa.  We also know how to compute Acme's position at conjunction based on fuel used.  We can now put these results together.  First, we'll set a criterion \( \mathbb{P}(collision) \le p \), for some user-defined \( p \).  The GenCom satellite, at conjunction, will be at altitude \( h \) as usual.  The Acme satellite, however, will perform a maneuever one half of an orbit early, and its new altitude will be</p>
 
-<p>From this, we determine the all-important relationship between the radius at apogee \( r_a \) (remember that now, conjunction will happen at Acme's apogee) and the mass of fuel expended \( \Delta m \).</p>
+<p>\[ h_\mathrm{Acme} \approx h + \frac{4v}{GM} \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-2} u . \]</p>
 
-<p>\[ r_a \approx (R + h) + \frac{4v}{GM} \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-2} \frac{c}{m} \cdot \Delta m \]</p></body>
+<p>This tells us that the relative position at conjunction will be approximately</p>
+
+<p>\[ \Delta \hat{x} \approx \frac{4v}{GM} \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-2} u . \]</p>
+
+<p>Remember our relationship for probability of collision and relative position at conjunction?</p>
+
+<p>\[ \Delta \hat{x}^2 \approx \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 \mathbb{P}(\text{collision})^2} \right) \]</p>
+
+<p>We're actually going to convert this into an inequality, which will make optimization easier.  For a given \( p \), we want \( \Delta \hat{x} \) to be <em>at least</em> the square root of the right-hand side, though of course it's also fine if it's larger than that (being farther away will mean _even lower_ probability of collision).</p>
+
+<p>\[ \Delta \hat{x}^2 \ge \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \]</p>
+
+<p>Using our approximation above,</p>
+
+<p>\[ \left( \frac{4v}{GM} \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-2} \right)^2 u^2 \ge \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) . \]</p>
+
+<p>Woah.  Let's digest this.  We have a relationship between known variables, our decision variable \( u \) (how much velocity we're going to add), and our maximum allowed probability of collision \( p \).  We'll simplify this to</p>
+
+<p>\[ u^2 \ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} . \]</p>
+
+<p>Our objective is rather simple: we just want to minimize the amount of velocity change (positive or negative), which in turn minimizes fuel used.  In all its glory then, here is our optimization program.</p>
+
+<p>\[ \begin{align*} P: \min_u u^2 & \\ \text{subject to } u^2 &\ge \frac{G^2 M^2}{16 v^2} \sigma^2 \ln\left( \frac{2 b^2}{\pi \sigma^2 p^2} \right) \left( \frac{2}{R + h} - \frac{v^2}{GM} \right)^{-1} \end{align*} \]</p></body>
 
 </html>
