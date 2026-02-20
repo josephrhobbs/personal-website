@@ -22,6 +22,12 @@ I'd love to hear from you!  The best method for reaching me is electronic mail. 
 
 and I will respond within the week.  (I've refrained from providing my address by the normal means to deter web scrapers.)
 
+## Generative AI Statement
+
+I have a great deal of respect for the countless inspired mathematicians, computer scientists, and engineers who are building generative models for language, images, and video.  However, I also hold myself to the highest standard of accountability, ownership, and accuracy in everything to which I claim authorship.  Powerful as they may be, generative models can make mistakes... and even more so, using them to digitally "ghostwrite" content is a highly damaging activity and degrades the essentially human activity of writing.  For this reason, it is my decision and my guarantee that __generative models are not used__ for creating, copyediting, or proofreading written content on my website.
+
+You are welcome to learn more about my position on this by reading ["On Generative Models"](/on-generative-models).
+
 ## Credits
 
 ### Fonts
