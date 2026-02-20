@@ -48,8 +48,34 @@
 
 
 
-<div class="notice">More coming soon!</div>
+<div class="byline"><div>Joseph Hobbs</div><div>February 17, 2026</div></div>
 
-</body>
+<p>In recent years, I've taken up a great interest in the theory of <strong>optimization</strong>.  The formal study of optimization covers a vast body of problems ubiquitous in pure mathematics, computer science, and engineering.  Whenever we are faced with one or more <strong>decision variables</strong>, an <strong>objective</strong>, and zero or more <strong>constraints</strong>, we are dealing with an optimization problem.  Scientists use results from optimization to determine reliable estimators for dependent variables in their experiments.  Engineers of computer hardware use algorithms born from optimization to arrange transistors elegantly on their silicon die.  Roboticists use similar algorithms to determine optimal path plans for their robots.</p>
+
+<h2>Optimization, in General</h2>
+
+<p>The field of optimization formalizes "problems" as <strong>optimization programs</strong>.  In general, an optimization program looks like the following.</p>
+
+<p>\[ \begin{align*} \min_x & f(x) \\ \text{subject to } & g_i(x) \le 0 \\ & h_j(x) = 0 \end{align*} \]</p>
+
+<p>The <strong>objective</strong> function \( f(x) \) accepts a vector of decision variables \( x \) and returns a scalar value.  The value of \( x \) which globally minimizes \( f \) is considered the <strong>minimizer</strong> of this objective function.</p>
+
+<p>This is the <em>most general form</em> of an optimization program because we make no assumptions about the objective function \( f \) or the constraint functions \( g_i \) and \( h_j \).  Notice that, to write a maximization problem, we can simply minimize the <em>negative</em> of the corresponding objective function.  If we make no assumptions about these functions, finding the global minimizer \( x \) is NP-hard in the number of decision variables.  I've written a proof of this rather unfortunate fact in a different article <a href="/articles/hardness-of-nonlinear-programming">here</a> for those interested.</p>
+
+<h2>Convex Optimization</h2>
+
+<p>There is hope for us yet.  Though optimization is NP-hard in general, there are special cases which are much easier to solve.  Fortunately, these special cases are far more common that they might initially appear, particularly due to clever reparameterizations.</p>
+
+<p>One extraordinary special case is <strong>convex optimization</strong>.  An optimization program is <em>convex</em> if it has a convex objective function and a convex feasible region.  What does this mean?</p>
+
+<h3>Convex Sets</h3>
+
+<h3>Convex Functions</h3>
+
+<h3>Feasible Regions</h3>
+
+<h2>Complexity of Convex Optimization</h2>
+
+<p>TODO</p></body>
 
 </html>
