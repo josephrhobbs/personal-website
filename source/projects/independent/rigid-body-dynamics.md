@@ -12,7 +12,23 @@ I've always found throughout my education that I gain a new perspective on a phe
 
 ## Features
 
-::notice[Under construction!]
+Currently, the ADCS software package has the ability to simulate rigid-body rotation (using the Euler equation) with and without external torque.  I have also recently added _Kane damping_, which is a simple model for energy dissipation through fluid slosh, excitation of structural modes, or flexible structures like antennas.
+
+## Simulation Example
+
+Using ADCS, I plan to simulate a few missions notable to the study of attitude determination and control.
+
+### Explorer 1
+
+In 1958, NASA launched the first successful U.S. satellite, named __Explorer 1__.  The spacecraft was designed to spin about its long axis for stability.  However, soon after deployment, the Explorer 1 spacecraft entered an uncontrolled "flat spin", spinning about its major axis and flipping end-over-end.  This unexpected turn of events demonstrated weaknesses in our understanding of classical physics, and later revealed the effects of _energy dissipation_ on the movement of rigid bodies.  Using the ADCS package, I plan to simulate the Explorer 1 capsule's initial rotation and loss of stability due to energy dissipation.
+
+::notice[Coming soon!]
+
+### Gemini VIII
+
+In 1966, N. Armstrong and D. Scott embarked on the Gemini VIII mission to low Earth orbit (LEO).  Armstrong and Scott managed to achieve the first successful docking of two spacecraft in orbit.  However, shortly after, the two docked spacecraft entered an uncontrolled and violent spin, nearly killing the astronauts aboard.  Fortunately, the astronauts regained control of the capsule and performed a controlled reentry shortly after.  Using the ADCS package, I plan to simulate the tumble of Gemini VIII and its quick recovery.
+
+::notice[Coming soon!]
 
 ## Source Code
 
