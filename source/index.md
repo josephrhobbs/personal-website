@@ -16,7 +16,11 @@ I've also written a few short posts about topics that interest me.  These didn't
 
 ::tile[Surge One][Blown-lift regional aircraft][/projects/academic/surge-one][/media/airplane-propeller.jpg]
 
+::tile[ADCS][Rigid-body dynamics simulation][/projects/independent/rigid-body-dynamics][/media/mars-orbit.jpg]
+
 ::tile[Blog Builder][Static web framework][/projects/independent/blog-builder][/media/code.jpg]
+
+::tile[Proton][Wireless access point control software][/projects/open-source/proton][/media/wifi.png]
 
 ## Articles
 
