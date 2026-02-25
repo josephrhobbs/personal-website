@@ -1,4 +1,4 @@
-# Neural Stress
+# Approximate Stress
 
 ~
 
