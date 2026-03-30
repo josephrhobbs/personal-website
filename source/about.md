@@ -6,7 +6,9 @@
 
 Hello!  My name is Joseph, and I'm an engineer living and working in Durham, NC.
 
-I graduated from MIT in May 2025 with a bachelor's degree in Aerospace Engineering.  I'm very grateful for the diversity of subjects I had the opportunity to study, and my education had a particular focus on applying novel analytical, visual, and computational methods to the study and practice of engineering.  Academically, I have particular interests in electrical and electronics engineering, aerodynamics, structural mechanics, and the intersection of probability theory, underactuated control, and convex optimization.  I also enjoy writing code in Python 3 or Rust, my two favorite programming languages.
+I graduated from MIT in May 2025 with a bachelor's degree in Aerospace Engineering.  I'm incredibly grateful for the diversity of subjects I had the opportunity to study at the Institute.  That said, my studies particularly focused on the application of novel analytical and computational methods to the pedagogy and practice of engineering.
+
+My academic interests include electrical and electronics engineering; continuum mechanics, including aerodynamics, fluid mechanics, and the mechanics of solids; the theory of probability and stochastic processes; and algorithms for perception, control, and optimization.  I also believe that quality education is wonderfully freeing... and for that reason, I am passionate about teaching engineering and science topics.
 
 In late 2025, I commissioned into the U.S. Army Reserve, and I'll be serving our nation as a Cyber Warfare Officer starting in early 2026.
 
