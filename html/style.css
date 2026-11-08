@@ -142,7 +142,7 @@
         letter-spacing: 1px;
     }
 
-    .tile {
+    div.tile {
         margin-left: 25%;
         margin-right: 25%;
         text-align: center;
@@ -150,6 +150,14 @@
         margin-top: 12px;
         margin-bottom: 12px;
         border-radius: 4px;
+    }
+
+    .tile div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 0px;
     }
 }
 
