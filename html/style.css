@@ -141,6 +141,16 @@
         text-transform: uppercase;
         letter-spacing: 1px;
     }
+
+    .tile {
+        margin-left: 25%;
+        margin-right: 25%;
+        text-align: center;
+        color: white;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border-radius: 4px;
+    }
 }
 
 @media screen and (max-device-width: 768px) {
