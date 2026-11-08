@@ -1,275 +1,215 @@
 :root {
-    --spaceblue: #212999;
-    --flamered: #ad2626;
-    --babyblue: #477cb8;
+    --flamered: #7b230b;
+    --steelgray: #404040;
 }
 
 @media screen and (min-device-width: 768px) {
     /* For desktop */
+
     body {
-        background-color: white;
-        margin: 0% 20%;
-        font-size: 24px;
-        font-family: "EB Garamond", serif;
-        padding-bottom: 80px;
+        font-family: "Inter Tight", sans-serif;
+        margin: 0px;
+        background-color: #ffffff;
+        color: #222222;
     }
 
     h1 {
-        color: var(--spaceblue);
-        font-size: 96px;
-        display: flex;
-        justify-content: center;
-        margin-top: 80px;
-        margin-bottom: 0px;
-        font-family: "Outfit", sans-serif;
+        font-family: "Playfair", serif;
+        font-size: 48px;
+        text-align: center;
+        color: #222222;
+        margin: 0px;
+        padding: 48px 0px 0px 0px;
     }
 
     h2 {
-        color: darkblue;
-        font-style: italic;
-        font-size: 48px;
-        font-family: "Outfit", sans-serif;
-        transition: 0.4s;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-
-    h2::before {
-        content: "\2794";
-        font-size: 36px;
-        font-family: monospace;
-        font-style: normal;
-        left: 0px;
-        margin-right: 14px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 28px;
+        color: var(--flamered);
+        margin: 24px 25% 24px 25%;
+        border-top: 1px solid rgba(17, 17, 17, 0.15);
+        padding-top: 24px;
     }
 
     h3 {
-        color: black;
-        font-size: 30px;
-        font-family: monospace;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-family: "Outfit", sans-serif;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 22px;
+        color: #222222;
+        margin: 24px 25% 24px 25%;
     }
 
     h4 {
-        color: var(--spaceblue);
-        display: flex;
-        justify-content: center;
-        font-family: "Outfit", sans-serif;
-        font-weight: 300;
-        font-size: 24px;
-        margin-top: 40px;
-        margin-bottom: 12px;
-        letter-spacing: 4px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 18px;
+        color: #222222;
+        margin: 24px 25% 24px 25%;
+        text-transform: uppercase;
     }
 
-    a {
-        color: var(--flamered);
-        text-decoration: none;
+    h5 {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 18px;
+        color: var(--steelgray);
+        margin: 24px 25% 24px 25%;
+        text-transform: uppercase;
     }
 
-    a:hover {
-        border-bottom: 2px solid var(--flamered);
-    }
-
-    a:visited {
-        color: var(--flamered);
+    h6 {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 16px;
+        color: var(--steelgray);
+        margin: 24px 25% 24px 25%;
+        text-transform: uppercase;
     }
 
     p {
-        line-height: 40px;
+        margin-left: 25%;
+        margin-right: 25%;
+        font-size: 18px;
+        text-indent: 30px;
+        line-height: 30px;
+        text-align: justify;
     }
 
-    div.tile {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 46%;
-        min-height: 180px;
-        height: auto;
-        margin: 10px;
-        border-radius: 20px;
+    p a {
         text-decoration: none;
-        color: white;
-        background-color: white;
-        font-size: 30px;
-        text-shadow: 0px 0px 8px black, -2px -2px 8px black, -2px 2px 8px black, 2px -2px 8px black, 2px 2px 8px black;
-        transition: 0.4s;
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-    }
-
-    .tile div {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 0px;
-    }
-
-    div.tile:hover {
-        transition: 0.4s;
-        filter: brightness(1.5);
-    }
-
-    div.tile .desc {
-        font-family: "EB Garamond", serif;
-        font-size: 24px;
+        color: var(--flamered);
     }
 
     div.menu {
-        position: sticky;
-        display: flex;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        justify-content: center;
-        font-size: 24px;
+        font-family: "Inter Tight", sans-serif;
+        font-size: 20px;
+        position: fixed;
+        float: left;
+        top: 0px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        width: 25%;
     }
 
     div.menu a {
-        margin: 8px 20px;
-        padding: 8px;
-        border: 2px solid var(--babyblue);
-        border-radius: 18px;
+        margin: 24px 36px;
         text-decoration: none;
-        transition: 0.4s;
-        background-color: var(--babyblue);
-        color: white;
-        font-family: "Outfit", sans-serif;
-        font-weight: 200;
+        color: var(--flamered);
+        display: block;
+        border-bottom: 2px solid #ffffff;
     }
 
     div.menu a:hover {
-        border: 2px solid var(--babyblue);
-        background-color: white;
-        color: var(--babyblue);
-        transition: 0.4s;
+        color: var(--steelgray);
+        border-bottom: 2px solid var(--steelgray);
     }
 
-    img.float {
+    div.mathblock {
+        margin-left: 25%;
+        margin-right: 25%;
+        font-size: 18px;
+        text-indent: 30px;
+        line-height: 30px;
+        text-align: justify;
+        padding: 12px;
+        background-color: #eeeeee;
         border-radius: 12px;
-        margin-top: 12px;
-        margin-bottom: 12px;
-        margin-left: 0px;
-        margin-right: 24px;
-        width: 25%;
-        height: auto;
-        display: block;
-        float: left;
+        margin-bottom: 24px;
+    }
+    
+    div.mathblock span {
+        color: var(--flamered);
+        font-weight: bold;
+        font-size: 18px;
+        text-indent: 30px;
+        line-height: 30px;
     }
 
-    img.full {
-        border-radius: 12px;
-        margin-top: 12px;
-        margin-bottom: 12px;
-        margin-left: 0px;
-        margin-right: 24px;
-        width: 100%;
-        height: auto;
-        display: block;
+    div.mathblock p {
+        margin: 0px;
     }
 
-    div.notice {
+    div.byline {
         display: inline-flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 100px;
-        height: auto;
-        margin: 10px;
+        justify-content: space-between;
+        width: 50%;
         border-radius: 20px;
         text-decoration: none;
-        color: rgb(85, 85, 85);
-        background-color: rgb(247 229 80 / 47%);
-        font-size: 36px;
-        font-family: "Outfit", sans-serif;
+        color: var(--flamered);
+        font-size: 18px;
+        font-family: "Inter Sans", sans-serif;
         font-weight: 600;
-    }
-
-    div.notice::before {
-        content: "NOTICE";
-        letter-spacing: 4px;
-        font-size: 24px;
-        color: gray;
+        margin: 24px 25% 24px 25%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 }
 
 @media screen and (max-device-width: 768px) {
     /* For mobile */
+    
     body {
-        background-color: white;
-        margin: 0% 5%;
-        font-size: 54px;
-        font-family: "EB Garamond", serif;
-        padding-bottom: 80px;
+        font-family: "Inter Tight", sans-serif;
+        margin: 0px;
+        background-color: #ffffff;
     }
 
     h1 {
-        color: var(--spaceblue);
-        font-size: 84px;
-        display: flex;
-        justify-content: center;
-        margin-top: 80px;
-        margin-bottom: 0px;
-        font-family: "Outfit", sans-serif;
+        font-family: "Playfair", serif;
+        font-size: 72px;
+        text-align: center;
+        color: #222222;
+        margin: 0px;
+        padding: 48px 0px 0px 0px;
     }
 
     h2 {
-        color: darkblue;
-        font-style: italic;
-        font-size: 72px;
-        font-family: "Outfit", sans-serif;
-        transition: 0.4s;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-
-    h2::before {
-        content: "\2794";
-        font-size: 64px;
-        font-family: monospace;
-        font-style: normal;
-        left: 0px;
-        margin-right: 14px;
+        margin: 12px 48px 12px 48px;
+        font-family: "Playfair", serif;
+        font-size: 60px;
+        color: #222222;
     }
 
     h3 {
-        color: black;
-        font-size: 60px;
-        font-family: monospace;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-family: "Outfit", sans-serif;
-    }
-
-    h4 {
-        color: var(--spaceblue);
-        display: flex;
-        justify-content: center;
-        font-family: "Outfit", sa36ns-serif;
-        font-weight: 300;
-        font-size: 36px;
-        margin-top: 40px;
-        margin-bottom: 12px;
-        letter-spacing: 4px;
-        font-weight: bold;
-    }
-
-    a {
-        color: var(--flamered);
-        text-decoration: none;
-    }
-
-    a:visited {
-        color: var(--flamered);
+        margin: 12px 48px 12px 48px;
+        font-family: "Playfair", serif;
+        font-size: 48px;
+        color: #222222;
     }
 
     p {
-        line-height: 96px;
-        margin-bottom: 42px;
+        margin-left: 48px;
+        margin-right: 48px;
+        font-size: 48px;
+        text-indent: 48px;
+        line-height: 72px;
+        text-align: justify;
+    }
+
+    p a {
+        text-decoration: none;
+        color: var(--flamered);
+    }
+
+    div.menu {
+        font-family: "Computer Modern Sans", sans-serif;
+        display: flex;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        margin-bottom: 48px;
+        justify-content: center;
+        font-size: 42px;
+        background-color: var(--flamered);
+        position: sticky;
+        top: 0px;
+        z-index: 9999;
+    }
+
+    div.menu a {
+        margin: 8px 12px;
+        padding: 12px 24px;
+        border-radius: 24px;
+        text-decoration: none;
+        color: var(--flamered);
+        background-color: white;
     }
 
     div.tile {
@@ -277,24 +217,18 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: calc(100% - 96px);
         min-height: 180px;
         height: auto;
-        margin: 10px;
+        margin: 12px 48px 12px 48px;
         border-radius: 20px;
         text-decoration: none;
         color: white;
-        background-color: white;
-        font-size: 54px;
+        background-color: var(--flamered);
+        font-size: 52px;
         text-shadow: 0px 0px 8px black, -2px -2px 8px black, -2px 2px 8px black, 2px -2px 8px black, 2px 2px 8px black;
         transition: 0.4s;
-        font-family: "Outfit", sans-serif;
         font-weight: 600;
-    }
-
-    div.tile:hover {
-        transition: 0.4s;
-        filter: brightness(1.5);
     }
 
     .tile div {
@@ -305,76 +239,99 @@
         height: 0px;
     }
 
+    div.tile:hover {
+        transition: 0.4s;
+        background-color: var(--steelgray);
+    }
+
     div.tile .desc {
-        font-family: "EB Garamond", serif;
-        font-size: 48px;
+        font-size: 36px;
+    }
+}
+
+@media print {
+    /* For print */
+    
+    body {
+        font-family: "Inter Tight", sans-serif;
+        margin: 48px;
+        color: #222222;
+    }
+
+    h1 {
+        font-family: "Playfair", serif;
+        font-size: 40px;
+        text-align: center;
+        color: #222222;
+    }
+
+    h2 {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 24px;
+        color: var(--flamered);
+        border-top: 1px solid rgba(17, 17, 17, 0.3);
+        padding-top: 18px;
+    }
+
+    h3 {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 20px;
+        color: #222222;
+    }
+
+    h4 {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 18px;
+        color: var(--steelgray);
+        text-transform: uppercase;
+    }
+
+    h5 {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 18px;
+        color: #222222;
+        text-transform: uppercase;
+    }
+
+    h6 {
+        font-family: "Inter Tight", sans-serif;
+        font-size: 16px;
+        color: var(--steelgray);
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 18px;
+        text-indent: 36px;
+        line-height: 36px;
+        text-align: justify;
+    }
+
+    p a {
+        text-decoration: none;
+        color: var(--flamered);
     }
 
     div.menu {
-        position: sticky;
-        display: flex;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        justify-content: center;
-        text-align: center;
-        flex-flow: row;
-        flex-wrap: wrap;
-        font-size: 56px;
+        display: none;
     }
 
-    div.menu a {
-        margin: 8px 20px;
-        width: 40%;
-        padding: 8px;
-        border: 2px solid var(--babyblue);
-        border-radius: 18px;
-        text-decoration: none;
-        transition: 0.4s;
-        background-color: var(--babyblue);
-        color: white;
-        font-family: "Outfit", sans-serif;
-        font-weight: 400;
-    }
-
-    div.menu a:hover {
-        border: 2px solid var(--babyblue);
-        background-color: white;
-        color: var(--babyblue);
-        transition: 0.4s;
-    }
-
-    img {
+    div.mathblock {
+        font-size: 18px;
+        text-indent: 36px;
+        line-height: 36px;
+        text-align: justify;
+        padding: 12px;
+        background-color: #eeeeee;
         border-radius: 12px;
-        margin-top: 24px;
         margin-bottom: 24px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        display: block;
     }
-
-    div.notice {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 180px;
-        height: auto;
-        margin: 10px;
-        border-radius: 20px;
-        text-decoration: none;
-        color: rgb(85, 85, 85);
-        background-color: rgb(247 229 80 / 47%);
-        font-size: 54px;
-        font-family: "Outfit", sans-serif;
-        font-weight: 600;
-    }
-
-    div.notice::before {
-        content: "NOTICE";
-        letter-spacing: 4px;
-        font-size: 36px;
-        color: gray;
+    
+    div.mathblock span {
+        color: var(--flamered);
+        font-weight: bold;
+        font-size: 18px;
+        text-indent: 30px;
+        line-height: 30px;
     }
 }
